@@ -27,6 +27,7 @@
           <li><a href="#" aria-current="page">Inicio</a></li>
           <li><a href="#">Ofertas</a></li>
           <li><a href="#">Imágenes</a></li>
+          <li><a href="#catalogo">Catálogo</a></li>
           <li><a href="#">Contacto</a></li>
         </ul>
       </nav>
@@ -34,6 +35,7 @@
   </header>
 
   <main id="contenido">
+    <!-- Sección hero -->
     <section class="container">
       <h1 class="tit">¿Quiénes somos?</h1>
       <p class="tit">
@@ -42,6 +44,292 @@
         con entrega en máximo 10 días hábiles, garantizando un servicio ágil, confiable y con precios más
         competitivos que la mayoría.
       </p>
+    </section>
+
+    <!-- Sección Lenguajes de programación -->
+    <section class="container">
+      <h1 class="tit1">Lenguajes de programación</h1>
+      <img class="tit1" src="./LDP.png" alt="Lenguajes de programación" loading="lazy" decoding="async" />
+    </section>
+
+    <!-- Catálogo de paquetes (zig-zag con imágenes estáticas) -->
+    <section id="catalogo" class="container catalogo">
+      <h2 class="cat-title">Catálogo de paquetes</h2>
+
+      <!-- Paquete 1 -->
+      <article class="pack">
+        <figure class="pack-media">
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+            srcset="
+              https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=70 800w,
+              https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=75 1200w,
+              https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80 1600w
+            "
+            sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 600px"
+            alt="Landing Page Express: diseño moderno y responsive en una sola página"
+            loading="lazy" decoding="async" referrerpolicy="no-referrer"
+          />
+        </figure>
+        <div class="pack-body">
+          <h3>Paquete 1: Landing Page Express</h3>
+          <ul class="pack-list">
+            <li>1 página con secciones básicas (inicio, servicios/producto, contacto).</li>
+            <li>Diseño moderno, responsive y optimizado para móviles.</li>
+            <li>Integración con WhatsApp y redes sociales.</li>
+            <li>Formulario de contacto.</li>
+          </ul>
+          <div class="pack-meta">
+            <span class="time">Entrega: hasta 5 días hábiles</span>
+            <span class="price">$4,500 – $6,000 MXN</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Paquete 2 -->
+      <article class="pack">
+        <figure class="pack-media">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80"
+            srcset="
+              https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=70 800w,
+              https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=75 1200w,
+              https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80 1600w
+            "
+            sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 600px"
+            alt="Sitio Web Corporativo: equipo en oficina con enfoque profesional"
+            loading="lazy" decoding="async" referrerpolicy="no-referrer"
+          />
+        </figure>
+        <div class="pack-body">
+          <h3>Paquete 2: Sitio Web Corporativo</h3>
+          <ul class="pack-list">
+            <li>Hasta 6 secciones (Inicio, Nosotros, Servicios, Blog, Contacto, etc.).</li>
+            <li>Diseño a medida con código profesional.</li>
+            <li>Optimización SEO básica.</li>
+            <li>Certificado SSL (seguridad HTTPS).</li>
+            <li>Integración con Google Maps y redes sociales.</li>
+          </ul>
+          <div class="pack-meta">
+            <span class="time">Entrega: hasta 10 días hábiles</span>
+            <span class="price">$8,000 – $12,000 MXN</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Paquete 3 -->
+      <article class="pack">
+        <figure class="pack-media">
+          <img
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1600&q=80"
+            srcset="
+              https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=70 800w,
+              https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=75 1200w,
+              https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1600&q=80 1600w
+            "
+            sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 600px"
+            alt="E-commerce: pago con tarjeta y experiencia de compra online"
+            loading="lazy" decoding="async" referrerpolicy="no-referrer"
+          />
+        </figure>
+        <div class="pack-body">
+          <h3>Paquete 3: E-commerce / Tienda Online</h3>
+          <ul class="pack-list">
+            <li>Catálogo de hasta 50 productos.</li>
+            <li>Carrito de compras y pasarela de pagos (Stripe, PayPal, Mercado Pago).</li>
+            <li>Panel administrativo básico para gestionar productos y pedidos.</li>
+            <li>Optimización para móviles y carga rápida.</li>
+            <li>SEO básico para productos.</li>
+          </ul>
+          <div class="pack-meta">
+            <span class="time">Entrega: hasta 10 días hábiles</span>
+            <span class="price">$15,000 – $25,000 MXN</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Servicio adicional -->
+      <article class="pack">
+        <figure class="pack-media">
+          <img
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80"
+            srcset="
+              https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=70 800w,
+              https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=75 1200w,
+              https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80 1600w
+            "
+            sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 600px"
+            alt="Mantenimiento y soporte mensual: servidores y seguridad"
+            loading="lazy" decoding="async" referrerpolicy="no-referrer"
+          />
+        </figure>
+        <div class="pack-body">
+          <h3>Servicio Adicional: Mantenimiento y Soporte Mensual</h3>
+          <ul class="pack-list">
+            <li>Actualizaciones de seguridad.</li>
+            <li>Corrección de errores.</li>
+            <li>Ajustes menores en contenido/diseño.</li>
+            <li>Respaldo mensual del sitio.</li>
+          </ul>
+          <div class="pack-meta">
+            <span class="time">Frecuencia: mensual</span>
+            <span class="price">Desde $1,200 – $2,500 MXN/mes</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Extras opcionales -->
+      <article class="pack">
+        <figure class="pack-media">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80"
+            srcset="
+              https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=70 800w,
+              https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=75 1200w,
+              https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80 1600w
+            "
+            sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 600px"
+            alt="Extras: paneles de analítica, SEO y branding"
+            loading="lazy" decoding="async" referrerpolicy="no-referrer"
+          />
+        </figure>
+        <div class="pack-body">
+          <h3>Extras Opcionales</h3>
+          <ul class="pack-list">
+            <li>Integración de chat en vivo: + $1,000 MXN.</li>
+            <li>SEO avanzado: + $3,000 – $6,000 MXN.</li>
+            <li>Diseño de branding (logo, paleta, tipografías): + $3,500 MXN.</li>
+            <li>Hosting y dominio (anual): $2,000 – $3,000 MXN.</li>
+          </ul>
+          <div class="pack-meta">
+            <span class="time">Complementos</span>
+            <span class="price">Precios adicionales</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Carrusel de proyectos (nuevo) -->
+    <section id="portafolio" class="container carouselsec">
+      <h2 class="car-title">Proyectos recientes</h2>
+
+      <div class="car-viewport" aria-roledescription="carousel" aria-label="Galería de proyectos">
+        <button class="car-btn prev" aria-label="Anterior" data-dir="-1">‹</button>
+
+        <ul class="car-track">
+          <!-- Slide 1 -->
+          <li class="car-slide is-active" role="group" aria-label="1 de 6">
+            <figure class="car-figure">
+              <img
+                src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=70 800w,
+                  https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=75 1200w,
+                  https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80 1600w
+                "
+                sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 1000px"
+                alt="Landing corporativa moderna"
+                loading="lazy" decoding="async" referrerpolicy="no-referrer"
+              />
+              <figcaption>Landing corporativa moderna</figcaption>
+            </figure>
+          </li>
+
+          <!-- Slide 2 -->
+          <li class="car-slide" role="group" aria-label="2 de 6">
+            <figure class="car-figure">
+              <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=70 800w,
+                  https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=75 1200w,
+                  https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=80 1600w
+                "
+                sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 1000px"
+                alt="Sitio web corporativo"
+                loading="lazy" decoding="async" referrerpolicy="no-referrer"
+              />
+              <figcaption>Sitio web corporativo</figcaption>
+            </figure>
+          </li>
+
+          <!-- Slide 3 -->
+          <li class="car-slide" role="group" aria-label="3 de 6">
+            <figure class="car-figure">
+              <img
+                src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=70 800w,
+                  https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=75 1200w,
+                  https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80 1600w
+                "
+                sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 1000px"
+                alt="Dashboard administrativo"
+                loading="lazy" decoding="async" referrerpolicy="no-referrer"
+              />
+              <figcaption>Dashboard administrativo</figcaption>
+            </figure>
+          </li>
+
+          <!-- Slide 4 -->
+          <li class="car-slide" role="group" aria-label="4 de 6">
+            <figure class="car-figure">
+              <img
+                src="https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=800&q=70 800w,
+                  https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1200&q=75 1200w,
+                  https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1600&q=80 1600w
+                "
+                sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 1000px"
+                alt="UX/UI para producto digital"
+                loading="lazy" decoding="async" referrerpolicy="no-referrer"
+              />
+              <figcaption>UX/UI para producto digital</figcaption>
+            </figure>
+          </li>
+
+          <!-- Slide 5 -->
+          <li class="car-slide" role="group" aria-label="5 de 6">
+            <figure class="car-figure">
+              <img
+                src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=70 800w,
+                  https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1200&q=75 1200w,
+                  https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=1600&q=80 1600w
+                "
+                sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 1000px"
+                alt="Landing de servicios"
+                loading="lazy" decoding="async" referrerpolicy="no-referrer"
+              />
+              <figcaption>Landing de servicios</figcaption>
+            </figure>
+          </li>
+
+          <!-- Slide 6 -->
+          <li class="car-slide" role="group" aria-label="6 de 6">
+            <figure class="car-figure">
+              <img
+                src="https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1600&q=80"
+                srcset="
+                  https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=800&q=70 800w,
+                  https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1200&q=75 1200w,
+                  https://images.unsplash.com/photo-1525182008055-f88b95ff7980?auto=format&fit=crop&w=1600&q=80 1600w
+                "
+                sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 1000px"
+                alt="Sitio mobile-first"
+                loading="lazy" decoding="async" referrerpolicy="no-referrer"
+              />
+              <figcaption>Sitio mobile-first</figcaption>
+            </figure>
+          </li>
+        </ul>
+
+        <button class="car-btn next" aria-label="Siguiente" data-dir="1">›</button>
+      </div>
+
+      <div class="car-dots" role="tablist" aria-label="Paginación del carrusel"></div>
     </section>
   </main>
 

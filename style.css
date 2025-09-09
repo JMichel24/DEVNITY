@@ -11,7 +11,7 @@
 
   /* Azul metálico (cuerpo) */
   --metal-blue-1:#0b1f34;
-  --metal-blue-2:#103a64;
+  --metal-blue-2:#0b1b64;
   --metal-blue-3:#0a1c31;
 
   /* Tamaños header/logo (desktop) */
@@ -105,16 +105,29 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 /* Títulos / texto principales */
 .tit{
-  margin:0 0 10px;
+  margin-top: -100px;
+  /*margin:0 0 10px;*/
   text-align:center;
 }
-.tit + .tit{ margin-top:10px }
+.tit + .tit{ margin-top:-400px }
 h1.tit{ font-size:2rem; line-height:1.2 }
 p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
+.tit1 {
+    margin-top: -250px;
+    text-align: center;
+}
+.tit1 + .tit1 {
+    margin-top: 50px;
+    margin: 0 480px;
+    border-radius: 5px;
+    margin: 12px auto 24px;   /* centra la imagen horizontalmente */
+  width: min(50vw, 260px);   /* centrada y compacta, no tan pequeña */
+  height: auto;
+}
 
 /* Hero centrado verticalmente (desktop) */
 #contenido > .container:first-child{
-  min-height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--header-heght));
   display: grid;
   place-items: center;
 }
@@ -174,4 +187,347 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
 /* Respeta preferencias de usuarios */
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important}
+}
+
+/* ============================== */
+/* Overrides responsivos añadidos */
+/* ============================== */
+
+/* Celulares (≤600px) */
+@media (max-width: 600px){
+  :root{
+    --logo-size: 42px;
+    --header-padding-y: 6px;
+    --header-fade-height: 28px; /* fade más corto en móvil */
+  }
+
+  .site-header .inner{
+    gap: 8px;
+    padding: var(--header-padding-y) 12px;
+  }
+
+  /* Hero más cómodo en móvil */
+  #contenido > .container:first-child{
+    min-height: auto !important;
+    display: block !important;
+    padding-block: 12px 16px !important;
+  }
+
+  /* Corregir márgenes negativos en títulos en móvil */
+  .tit{
+    margin: 8px 0 10px !important;
+    text-align: center;
+  }
+  .tit + .tit{
+    margin-top: 8px !important;
+  }
+  h1.tit{
+    font-size: clamp(1.35rem, 5.5vw, 1.6rem);
+    line-height: 1.2;
+  }
+  p.tit{
+    font-size: clamp(.96rem, 3.2vw, 1.05rem);
+    line-height: 1.45;
+    max-width: 60ch;
+    margin: 0 auto;
+    padding: 0 4px;
+  }
+
+  /* Sección lenguajes */
+  .tit1{
+    margin: 16px auto 8px !important;
+    text-align: center;
+  }
+  img.tit1{
+    display: block;
+    margin: 12px auto 20px !important;
+    width: min(92vw, 540px) !important; /* centrada y legible */
+    height: auto !important;
+  }
+  /* En caso de usar el selector adyacente para la imagen */
+  .tit1 + .tit1{
+    margin: 12px auto 20px !important;
+    width: min(92vw, 540px) !important;
+    height: auto !important;
+  }
+
+  .container{
+    padding: 16px 12px;
+  }
+}
+
+/* Tablets pequeñas (601–768px) */
+@media (min-width: 601px) and (max-width: 768px){
+  :root{
+    --logo-size: 48px;
+    --header-padding-y: 8px;
+    --header-fade-height: 32px;
+  }
+
+  .site-header .inner{
+    gap: 10px;
+    padding: var(--header-padding-y) 14px;
+  }
+
+  /* Hero cómodo en tablet chica */
+  #contenido > .container:first-child{
+    min-height: auto !important;
+    display: block !important;
+    padding-block: 16px 20px !important;
+  }
+
+  /* Títulos sin saltos bruscos */
+  .tit{
+    margin: 12px 0 12px !important;
+    text-align: center;
+  }
+  .tit + .tit{
+    margin-top: 12px !important;
+  }
+  h1.tit{
+    font-size: clamp(1.6rem, 3.2vw, 1.9rem);
+    line-height: 1.2;
+  }
+  p.tit{
+    font-size: clamp(1rem, 2.2vw, 1.1rem);
+    line-height: 1.5;
+    max-width: 65ch;
+    margin: 0 auto;
+    padding: 0 6px;
+  }
+
+  /* Sección lenguajes */
+  .tit1{
+    margin: 20px auto 10px !important;
+  }
+  img.tit1,
+  .tit1 + .tit1{
+    display: block;
+    margin: 14px auto 24px !important;
+    width: min(90vw, 720px) !important;
+    height: auto !Important;
+  }
+
+  .container{ padding: 20px 16px; }
+}
+
+/* Tablets medianas/grandes (769–1024px) */
+@media (min-width: 769px) and (max-width: 1024px){
+  /* Mantén buena proporción y elimina márgenes negativos */
+  .tit{
+    margin: 16px 0 14px !important;
+    text-align: center;
+  }
+  .tit + .tit{
+    margin-top: 14px !important;
+  }
+  h1.tit{
+    font-size: clamp(1.9rem, 2.4vw, 2.2rem);
+    line-height: 1.2;
+  }
+  p.tit{
+    font-size: clamp(1.05rem, 1.6vw, 1.15rem);
+    line-height: 1.5;
+    max-width: 70ch;
+    margin: 0 auto;
+  }
+
+  .tit1{
+    margin: 24px auto 12px !important;
+  }
+  img.tit1,
+  .tit1 + .tit1{
+    margin: 16px auto 28px !important;
+    width: min(88vw, 820px) !important;
+    height: auto !important;
+  }
+
+  .container{ padding: 24px 18px; }
+}
+
+/* Móviles muy pequeños (≤380px) */
+@media (max-width: 380px){
+  :root{
+    --logo-size: 40px;
+    --header-padding-y: 6px;
+    --header-fade-height: 24px;
+  }
+
+  h1.tit{
+    font-size: clamp(1.25rem, 6vw, 1.45rem);
+  }
+  p.tit{
+    font-size: .95rem;
+  }
+
+  img.tit1,
+  .tit1 + .tit1{
+    width: min(94vw, 500px) !important;
+    margin: 10px auto 18px !important;
+  }
+}
+
+/* ========================= */
+/* Catálogo (cards zig-zag)  */
+/* ========================= */
+.catalogo{ margin-block: 24px 40px; }
+.cat-title{
+  text-align:center;
+  margin: 8px 0 20px;
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+}
+
+.pack{
+  display:flex; gap:0;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px; overflow:hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.02));
+  box-shadow: 0 12px 36px rgba(0,0,0,.28);
+}
+.pack + .pack{ margin-top: 22px; }
+
+.pack-media{
+  flex:1 1 50%;
+  min-height: 260px;
+  background: rgba(255,255,255,.04);
+}
+.pack-media img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
+
+.pack-body{
+  flex:1 1 50%;
+  padding: 20px 22px;
+  display:grid; align-content:start; gap:14px;
+}
+.pack-body h3{
+  margin:0;
+  font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+}
+.pack-list{
+  margin:0; padding:0; list-style:none;
+  display:grid; gap:8px;
+}
+.pack-list li{
+  position:relative; padding-left:22px;
+}
+.pack-list li::before{
+  content:""; position:absolute; left:0; top:.55em;
+  width:10px; height:10px; border-radius:50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(14,165,233,.25);
+}
+.pack-meta{
+  display:flex; gap:12px; flex-wrap:wrap;
+  align-items:center; justify-content:space-between;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding-top:12px;
+}
+.pack-meta .time,
+.pack-meta .price{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  padding: 6px 10px; border-radius: 999px;
+  font-weight: 600;
+}
+
+/* Alternar izquierda/derecha en pantallas ≥ tablets
+   Usamos nth-of-type para contar solo <article.pack> y no el título h2 */
+@media (min-width: 769px){
+  article.pack:nth-of-type(even){ flex-direction: row-reverse; }
+  .pack-media{ min-height: 320px; }
+  .pack-body{ padding: 22px 24px; }
+}
+
+/* Tablet (601–1024px): mantiene zig-zag, ajusta espacios */
+@media (min-width: 601px) and (max-width: 1024px){
+  article.pack:nth-of-type(even){ flex-direction: row-reverse; }
+  .pack-media{ min-height: 300px; }
+  .pack-body{ padding: 20px 20px; }
+  .pack-list{ gap: 8px; }
+}
+
+/* Móvil (≤600px): apila imagen arriba y texto abajo */
+@media (max-width: 600px){
+  .pack{ flex-direction: column; }
+  .pack-media{ min-height: 200px; }
+  .pack-body{ padding: 16px 14px; gap: 12px; }
+  .pack-list{ gap: 6px; }
+  .pack-meta{ flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+
+/* ================= */
+/* Carrusel (nuevo)  */
+/* ================= */
+.carouselsec{ margin-block: 24px 40px; }
+.car-title{
+  text-align:center; margin: 8px 0 16px;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+}
+
+.car-viewport{
+  position:relative; overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  background: rgba(255,255,255,.03);
+  box-shadow: 0 10px 28px rgba(0,0,0,.35);
+}
+
+.car-track{
+  display:flex; margin:0; padding:0; list-style:none;
+  transform: translateX(0%);
+  transition: transform .55s ease;
+}
+.car-slide{ min-width:100%; }
+.car-figure{ position:relative; margin:0; }
+.car-figure img{
+  width:100%; height: clamp(220px, 52vw, 520px); object-fit: cover; display:block;
+}
+.car-figure figcaption{
+  position:absolute; left:0; right:0; bottom:0;
+  padding: 10px 14px;
+  background: linear-gradient(to top, rgba(0,0,0,.55), rgba(0,0,0,0));
+  font-weight:600; letter-spacing:.2px;
+}
+
+.car-btn{
+  position:absolute; top:50%; transform: translateY(-50%);
+  width:42px; height:42px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.2);
+  background: rgba(0,0,0,.45);
+  color:#fff; font-size:22px; line-height:42px; text-align:center;
+  backdrop-filter: blur(4px);
+}
+.car-btn:hover{ background: rgba(14,165,233,.35); border-color: rgba(14,165,233,.6) }
+.car-btn:focus-visible{ outline:2px solid var(--color-primary); outline-offset:2px }
+.car-btn.prev{ left:10px }
+.car-btn.next{ right:10px }
+
+.car-dots{
+  display:flex; justify-content:center; align-items:center; gap:10px;
+  margin-top:10px;
+}
+.car-dot{
+  width:10px; height:10px; border-radius:50%;
+  background: rgba(255,255,255,.35);
+  border:1px solid rgba(255,255,255,.4);
+  transition: transform .2s ease, background-color .2s ease;
+}
+.car-dot[aria-selected="true"]{
+  background: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(14,165,233,.2);
+  transform: scale(1.15);
+}
+
+@media (max-width: 600px){
+  .car-figure img{ height: clamp(220px, 62vw, 420px) }
+  .car-btn{ width:38px; height:38px; line-height:38px; font-size:20px }
+  .car-btn.prev{ left:6px } .car-btn.next{ right:6px }
+}
+@media (min-width: 1025px){
+  .car-figure img{ height: clamp(380px, 38vw, 560px) }
+}
+
+@media (prefers-reduced-motion: reduce){
+  .car-track{ transition: none !important; }
 }

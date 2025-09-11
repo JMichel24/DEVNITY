@@ -11,7 +11,7 @@
 
   /* Azul metálico (cuerpo) */
   --metal-blue-1:#0b1f34;
-  --metal-blue-2:#0b1b64;
+  --metal-blue-2:#061557;
   --metal-blue-3:#0a1c31;
 
   /* Tamaños header/logo (desktop) */
@@ -68,7 +68,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
   transition: opacity .2s ease;
 }
-/* Si el menú está abierto, ocultamos el fade para no tapar el dropdown */
+/* Si el menú está abierto, ocultamos el fade */
 .site-header.menu-open::after{ opacity:0 }
 
 .brand{
@@ -159,14 +159,13 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
     padding:6px 6px;
     font-size:.9rem;
     line-height:1.1;
-    min-height:38px; /* aún tocable */
+    min-height:38px;
     border-radius:6px;
   }
   .nav-toggle{display:inline-flex; padding:8px}
   .nav-toggle .bar{ width:20px }
   .nav-toggle .bar + .bar{ margin-top:4px }
 
-  /* Evitar ocupar toda la pantalla en móvil */
   #contenido > .container:first-child{
     min-height:auto;
     display:block;
@@ -198,7 +197,7 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
   :root{
     --logo-size: 42px;
     --header-padding-y: 6px;
-    --header-fade-height: 28px; /* fade más corto en móvil */
+    --header-fade-height: 28px;
   }
 
   .site-header .inner{
@@ -206,14 +205,12 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
     padding: var(--header-padding-y) 12px;
   }
 
-  /* Hero más cómodo en móvil */
   #contenido > .container:first-child{
     min-height: auto !important;
     display: block !important;
     padding-block: 12px 16px !important;
   }
 
-  /* Corregir márgenes negativos en títulos en móvil */
   .tit{
     margin: 8px 0 10px !important;
     text-align: center;
@@ -233,7 +230,6 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
     padding: 0 4px;
   }
 
-  /* Sección lenguajes */
   .tit1{
     margin: 16px auto 8px !important;
     text-align: center;
@@ -241,10 +237,9 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
   img.tit1{
     display: block;
     margin: 12px auto 20px !important;
-    width: min(92vw, 540px) !important; /* centrada y legible */
+    width: min(92vw, 540px) !important;
     height: auto !important;
   }
-  /* En caso de usar el selector adyacente para la imagen */
   .tit1 + .tit1{
     margin: 12px auto 20px !important;
     width: min(92vw, 540px) !important;
@@ -269,14 +264,12 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
     padding: var(--header-padding-y) 14px;
   }
 
-  /* Hero cómodo en tablet chica */
   #contenido > .container:first-child{
     min-height: auto !important;
     display: block !important;
     padding-block: 16px 20px !important;
   }
 
-  /* Títulos sin saltos bruscos */
   .tit{
     margin: 12px 0 12px !important;
     text-align: center;
@@ -296,7 +289,6 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
     padding: 0 6px;
   }
 
-  /* Sección lenguajes */
   .tit1{
     margin: 20px auto 10px !important;
   }
@@ -313,7 +305,6 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
 
 /* Tablets medianas/grandes (769–1024px) */
 @media (min-width: 769px) and (max-width: 1024px){
-  /* Mantén buena proporción y elimina márgenes negativos */
   .tit{
     margin: 16px 0 14px !important;
     text-align: center;
@@ -431,15 +422,14 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
   font-weight: 600;
 }
 
-/* Alternar izquierda/derecha en pantallas ≥ tablets
-   Usamos nth-of-type para contar solo <article.pack> y no el título h2 */
+/* Alternar izquierda/derecha en pantallas ≥ tablets */
 @media (min-width: 769px){
   article.pack:nth-of-type(even){ flex-direction: row-reverse; }
   .pack-media{ min-height: 320px; }
   .pack-body{ padding: 22px 24px; }
 }
 
-/* Tablet (601–1024px): mantiene zig-zag, ajusta espacios */
+/* Tablet (601–1024px) */
 @media (min-width: 601px) and (max-width: 1024px){
   article.pack:nth-of-type(even){ flex-direction: row-reverse; }
   .pack-media{ min-height: 300px; }
@@ -447,7 +437,7 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
   .pack-list{ gap: 8px; }
 }
 
-/* Móvil (≤600px): apila imagen arriba y texto abajo */
+/* Móvil (≤600px) */
 @media (max-width: 600px){
   .pack{ flex-direction: column; }
   .pack-media{ min-height: 200px; }
@@ -530,4 +520,124 @@ p.tit{ font-size:1.0625rem; line-height:1.5; max-width:65ch; margin:0 auto }
 
 @media (prefers-reduced-motion: reduce){
   .car-track{ transition: none !important; }
+}
+
+/* ===== Nuevos ajustes para anclas ===== */
+html{ scroll-behavior: smooth; }
+#promociones,
+#catalogo,
+#portafolio,
+#contacto{
+  scroll-margin-top: calc(var(--header-height) + 12px);
+}
+
+/* ===================== */
+/* Promociones (nuevo)   */
+/* ===================== */
+.promo{ margin-block: 8px 24px; }
+.promo-card{
+  display:grid; grid-template-columns: 1.1fr 0.9fr; align-items: stretch;
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px; overflow:hidden;
+  background: linear-gradient(135deg, rgba(14,165,233,.15), rgba(255,255,255,.04));
+  box-shadow: 0 12px 36px rgba(0,0,0,.32);
+  position: relative;
+}
+.promo-content{
+  padding: 22px 22px 18px;
+  display:grid; gap:14px; align-content:start;
+}
+.promo-badge{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:6px 12px; border-radius:999px;
+  background: radial-gradient(120% 120% at 50% 10%, rgba(14,165,233,.95), rgba(14,165,233,.7));
+  color:#001018; font-weight:800; letter-spacing:.4px;
+  box-shadow: 0 0 0 3px rgba(14,165,233,.25), 0 6px 18px rgba(14,165,233,.25) inset;
+}
+.promo-content h2{ margin:0; font-size: clamp(1.4rem, 3vw, 2rem); }
+.promo-content p{ margin:0; max-width: 65ch; }
+.promo-list{ margin:0; padding:0; list-style:none; display:grid; gap:8px; }
+.promo-list li{
+  position:relative; padding-left:22px;
+}
+.promo-list li::before{
+  content:""; position:absolute; left:0; top:.55em;
+  width:10px; height:10px; border-radius:50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(14,165,233,.25);
+}
+
+/* Countdown */
+.promo-timer{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.promo-deadline{ opacity:.9; font-weight:700; }
+.promo-countdown{ display:flex; gap:8px; flex-wrap:wrap; }
+.promo-tile{
+  min-width:66px; padding:8px 10px;
+  border-radius:12px;
+  background: rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.15);
+  display:grid; place-items:center;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+}
+.promo-tile .num{ font-weight:800; font-size: clamp(1rem, 4.2vw, 1.55rem); line-height:1; }
+.promo-tile .lbl{ font-size:.72rem; opacity:.85; margin-top:2px; letter-spacing:.2px; }
+
+.promo-ctas{ display:flex; gap:10px; flex-wrap:wrap; }
+.promo-btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 14px; border-radius:10px; font-weight:700;
+  border:1px solid rgba(255,255,255,.12);
+  transition: transform .15s ease, background-color .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.promo-btn.primary{
+  background: rgba(14,165,233,.2);
+  box-shadow: 0 8px 20px rgba(14,165,233,.18);
+}
+.promo-btn.primary:hover{
+  background: rgba(14,165,233,.3);
+  border-color: rgba(14,165,233,.6);
+}
+.promo-btn.ghost{
+  background: transparent;
+}
+.promo-btn.ghost:hover{
+  border-color: rgba(255,255,255,.35);
+  background: rgba(255,255,255,.06);
+}
+.promo-note{ opacity:.75 }
+
+.promo-media{
+  min-height: 260px; background: rgba(255,255,255,.04);
+}
+.promo-media img{
+  width:100%; height:100%; object-fit: cover; display:block;
+}
+
+/* Shine sutil en la tarjeta */
+.promo-card::after{
+  content:"";
+  position:absolute; top:-50%; left:-30%;
+  width:40%; height:200%;
+  background: linear-gradient(120deg, rgba(255,255,255,0), rgba(255,255,255,.15), rgba(255,255,255,0));
+  transform: rotate(15deg);
+  animation: promoShine 6.5s linear infinite;
+  pointer-events:none;
+}
+@keyframes promoShine{
+  0%{ transform: translateX(0) rotate(15deg); opacity:.0; }
+  10%{ opacity: .5; }
+  50%{ transform: translateX(220%) rotate(15deg); opacity:.25; }
+  100%{ transform: translateX(220%) rotate(15deg); opacity:.0; }
+}
+
+/* Responsive promociones */
+@media (max-width: 768px){
+  .promo-card{ grid-template-columns: 1fr; }
+  .promo-media{ order:-1; min-height: 220px; }
+  .promo-content{ padding: 18px 16px; }
+  .promo-ctas{ justify-content:flex-start; }
+  .promo-tile{ min-width:60px; }
+}
+@media (min-width: 1025px){
+  .promo-media{ min-height: 340px; }
 }

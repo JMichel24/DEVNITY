@@ -24,9 +24,9 @@
 
       <nav id="site-nav" class="nav" aria-label="Navegación principal">
         <ul>
-          <li><a href="#" aria-current="page">Inicio</a></li>
-          <li><a href="#">Ofertas</a></li>
-          <li><a href="#">Imágenes</a></li>
+          <li><a href="#" aria-current="page">Ofertas</a></li>
+          <li><a href="#promociones">Promociones</a></li>
+          <li><a href="#portafolio">Imágenes</a></li>
           <li><a href="#catalogo">Catálogo</a></li>
           <li><a href="#">Contacto</a></li>
         </ul>
@@ -50,6 +50,67 @@
     <section class="container">
       <h1 class="tit1">Lenguajes de programación</h1>
       <img class="tit1" src="./LDP.png" alt="Lenguajes de programación" loading="lazy" decoding="async" />
+    </section>
+
+    <!-- Sección Promociones (nuevo) -->
+    <section id="promociones" class="container promo">
+      <div class="promo-card">
+        <div class="promo-content">
+          <span class="promo-badge">20% OFF</span>
+          <h2>Apertura Devnity: 20% de descuento</h2>
+          <p>
+            Celebra con nosotros: durante nuestra apertura obtén 20% de descuento en cualquiera de nuestros paquetes.
+            Diseño moderno, entrega ágil y soporte dedicado.
+          </p>
+          <ul class="promo-list">
+            <li>Aplica en Landing Page, Corporativo y E‑commerce.</li>
+            <li>Responsive, carga rápida y SEO básico incluidos.</li>
+            <li>Integraciones: WhatsApp, redes y mapas.</li>
+          </ul>
+
+          <!-- Contador regresivo (nuevo) -->
+          <div class="promo-timer" aria-live="polite">
+            <span class="promo-deadline">Termina en</span>
+            <div class="promo-countdown">
+              <div class="promo-tile">
+                <span class="num" data-cc="days">00</span>
+                <span class="lbl">días</span>
+              </div>
+              <div class="promo-tile">
+                <span class="num" data-cc="hours">00</span>
+                <span class="lbl">horas</span>
+              </div>
+              <div class="promo-tile">
+                <span class="num" data-cc="mins">00</span>
+                <span class="lbl">min</span>
+              </div>
+              <div class="promo-tile">
+                <span class="num" data-cc="secs">00</span>
+                <span class="lbl">s</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="promo-ctas">
+            <a href="#catalogo" class="promo-btn primary">Ver paquetes</a>
+            <a href="#contacto" class="promo-btn ghost">Aprovechar promo</a>
+          </div>
+          <small class="promo-note">Válida para nuevos proyectos durante el periodo de apertura. No incluye extras opcionales ni costos de hosting/dominio.</small>
+        </div>
+        <figure class="promo-media">
+          <img
+            src="https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1600&q=80"
+            srcset="
+              https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=800&q=70 800w,
+              https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1200&q=75 1200w,
+              https://images.unsplash.com/photo-1556157382-97eda2d62296?auto=format&fit=crop&w=1600&q=80 1600w
+            "
+            sizes="(max-width:600px) 100vw, (max-width:1024px) 90vw, 560px"
+            alt="Promoción de apertura Devnity 20% OFF"
+            loading="lazy" decoding="async" referrerpolicy="no-referrer"
+          />
+        </figure>
+      </div>
     </section>
 
     <!-- Catálogo de paquetes (zig-zag con imágenes estáticas) -->
@@ -209,7 +270,7 @@
       </article>
     </section>
 
-    <!-- Carrusel de proyectos (nuevo) -->
+    <!-- Carrusel de proyectos -->
     <section id="portafolio" class="container carouselsec">
       <h2 class="car-title">Proyectos recientes</h2>
 
@@ -217,7 +278,6 @@
         <button class="car-btn prev" aria-label="Anterior" data-dir="-1">‹</button>
 
         <ul class="car-track">
-          <!-- Slide 1 -->
           <li class="car-slide is-active" role="group" aria-label="1 de 6">
             <figure class="car-figure">
               <img
@@ -235,7 +295,6 @@
             </figure>
           </li>
 
-          <!-- Slide 2 -->
           <li class="car-slide" role="group" aria-label="2 de 6">
             <figure class="car-figure">
               <img
@@ -253,7 +312,6 @@
             </figure>
           </li>
 
-          <!-- Slide 3 -->
           <li class="car-slide" role="group" aria-label="3 de 6">
             <figure class="car-figure">
               <img
@@ -271,7 +329,6 @@
             </figure>
           </li>
 
-          <!-- Slide 4 -->
           <li class="car-slide" role="group" aria-label="4 de 6">
             <figure class="car-figure">
               <img
@@ -289,7 +346,6 @@
             </figure>
           </li>
 
-          <!-- Slide 5 -->
           <li class="car-slide" role="group" aria-label="5 de 6">
             <figure class="car-figure">
               <img
@@ -307,7 +363,6 @@
             </figure>
           </li>
 
-          <!-- Slide 6 -->
           <li class="car-slide" role="group" aria-label="6 de 6">
             <figure class="car-figure">
               <img
@@ -330,6 +385,14 @@
       </div>
 
       <div class="car-dots" role="tablist" aria-label="Paginación del carrusel"></div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto" class="container">
+      <h2 style="text-align:center; margin:0 0 12px;">Contacto</h2>
+      <p style="text-align:center; max-width:60ch; margin:0 auto;">
+        ¿Tienes un proyecto en mente? Escríbenos y te respondemos a la brevedad.
+      </p>
     </section>
   </main>
 

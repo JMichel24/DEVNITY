@@ -144,3 +144,80 @@ document.addEventListener('DOMContentLoaded', () => {
   startAuto();
 
 })();
+
+// Navegación por anclas desde el header (robusto)
+document.addEventListener('DOMContentLoaded', () => {
+  const header = document.querySelector('.site-header');
+  const nav = document.getElementById('site-nav');
+  if (!nav) return;
+
+  const normalize = (s) => s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().trim();
+  const map = {
+    ofertas: '#catalogo',
+    promociones: '#promociones',
+    promocion: '#promociones',
+    promoción: '#promociones',
+    promo: '#promociones',
+    imagenes: '#portafolio',
+    imágenes: '#portafolio',
+    'proyectos recientes': '#portafolio',
+    proyectos: '#portafolio',
+    catalogo: '#catalogo',
+    catálogo: '#catalogo',
+    contacto: '#contacto'
+  };
+
+  nav.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const key = normalize(a.textContent || '');
+      const sel = map[key];
+      if (!sel) return; // deja pasar enlaces con href real
+      e.preventDefault();
+      const target = document.querySelector(sel);
+      if (!target) return;
+      const headerHeight = header ? header.offsetHeight : 0;
+      const y = target.getBoundingClientRect().top + window.pageYOffset - (headerHeight + 8);
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+});
+
+// =========================
+// Countdown Promoción (nuevo)
+// =========================
+document.addEventListener('DOMContentLoaded', () => {
+  const promo = document.querySelector('#promociones');
+  if (!promo) return;
+
+  const daysEl  = promo.querySelector('[data-cc="days"]');
+  const hoursEl = promo.querySelector('[data-cc="hours"]');
+  const minsEl  = promo.querySelector('[data-cc="mins"]');
+  const secsEl  = promo.querySelector('[data-cc="secs"]');
+
+  // Configura aquí la duración de la promo (ej. 10 días desde ahora)
+  const deadline = new Date(Date.now() + 10 * 24 * 60 * 60 * 1000);
+
+  const pad = (n) => String(n).padStart(2,'0');
+
+  function tick(){
+    const now = new Date();
+    let diff = deadline - now;
+    if (diff < 0) diff = 0;
+
+    const sec = Math.floor(diff / 1000) % 60;
+    const min = Math.floor(diff / (1000*60)) % 60;
+    const hr  = Math.floor(diff / (1000*60*60)) % 24;
+    const day = Math.floor(diff / (1000*60*60*24));
+
+    if (daysEl)  daysEl.textContent  = pad(day);
+    if (hoursEl) hoursEl.textContent = pad(hr);
+    if (minsEl)  minsEl.textContent  = pad(min);
+    if (secsEl)  secsEl.textContent  = pad(sec);
+  }
+
+  tick();
+  const timer = setInterval(() => {
+    tick();
+    if (new Date() >= deadline) clearInterval(timer);
+  }, 1000);
+});

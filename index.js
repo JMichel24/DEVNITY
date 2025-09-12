@@ -9,39 +9,34 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
     nav.classList.toggle('open', open);
-    header.classList.toggle('menu-open', open); // oculta el fade cuando el menú está abierto
+    header.classList.toggle('menu-open', open);
   };
 
-  // Alternar menú
   toggle.addEventListener('click', () => {
     const open = toggle.getAttribute('aria-expanded') !== 'true';
     setState(open);
   });
 
-  // Cerrar con Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') setState(false);
   });
 
-  // Cerrar al hacer click fuera
   document.addEventListener('click', (e) => {
     const clickFuera = !nav.contains(e.target) && !toggle.contains(e.target);
     if (clickFuera) setState(false);
   });
 
-  // Cerrar al seleccionar una opción del menú
   nav.addEventListener('click', (e) => {
     const link = e.target.closest('a');
     if (link) setState(false);
   });
 
-  // Cerrar al cambiar a viewport de escritorio
   const mq = window.matchMedia('(min-width: 769px)');
   const onResize = () => { if (mq.matches) setState(false); };
   mq.addEventListener ? mq.addEventListener('change', onResize) : mq.addListener(onResize);
 });
 
-// Carrusel (nuevo)
+// Carrusel
 (function initCarousels(){
   const root = document.querySelector('#portafolio');
   if (!root) return;
@@ -57,7 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const delay = 5000;
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  // Crear dots
   slides.forEach((_, i) => {
     const b = document.createElement('button');
     b.className = 'car-dot';
@@ -88,13 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
   prev.addEventListener('click', prevSlide);
   next.addEventListener('click', nextSlide);
 
-  // Teclado
   root.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') nextSlide();
     if (e.key === 'ArrowLeft') prevSlide();
   });
 
-  // Auto-play
   function startAuto(){
     if (reduced) return;
     stopAuto();
@@ -103,13 +95,11 @@ document.addEventListener('DOMContentLoaded', () => {
   function stopAuto(){ if (auto) clearInterval(auto); auto = null; }
   function restartAuto(){ stopAuto(); startAuto(); }
 
-  // Pausar en hover o foco
   root.addEventListener('mouseenter', stopAuto);
   root.addEventListener('mouseleave', startAuto);
   root.addEventListener('focusin', stopAuto);
   root.addEventListener('focusout', startAuto);
 
-  // Pausar si no es visible
   const io = ('IntersectionObserver' in window)
     ? new IntersectionObserver(entries => {
         entries.forEach(en => en.isIntersecting ? startAuto() : stopAuto());
@@ -117,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
     : null;
   io && io.observe(root);
 
-  // Swipe táctil
   let startX = 0, dx = 0, touching = false;
   const viewport = root.querySelector('.car-viewport');
   viewport.addEventListener('touchstart', (e) => {
@@ -133,19 +122,17 @@ document.addEventListener('DOMContentLoaded', () => {
   viewport.addEventListener('touchend', () => {
     if (!touching) return;
     touching = false;
-    const threshold = 50; // px
+    const threshold = 50;
     if (dx > threshold) prevSlide();
     else if (dx < -threshold) nextSlide();
     startAuto();
   });
 
-  // Iniciar
   goTo(0);
   startAuto();
-
 })();
 
-// Navegación por anclas desde el header (robusto)
+// Navegación por anclas desde el header
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('.site-header');
   const nav = document.getElementById('site-nav');
@@ -171,7 +158,7 @@ document.addEventListener('DOMContentLoaded', () => {
     a.addEventListener('click', (e) => {
       const key = normalize(a.textContent || '');
       const sel = map[key];
-      if (!sel) return; // deja pasar enlaces con href real
+      if (!sel) return;
       e.preventDefault();
       const target = document.querySelector(sel);
       if (!target) return;
@@ -182,9 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// =========================
-// Countdown Promoción (nuevo)
-// =========================
+// Countdown Promoción (Octubre)
 document.addEventListener('DOMContentLoaded', () => {
   const promo = document.querySelector('#promociones');
   if (!promo) return;
@@ -193,31 +178,97 @@ document.addEventListener('DOMContentLoaded', () => {
   const hoursEl = promo.querySelector('[data-cc="hours"]');
   const minsEl  = promo.querySelector('[data-cc="mins"]');
   const secsEl  = promo.querySelector('[data-cc="secs"]');
-
-  // Configura aquí la duración de la promo (ej. 10 días desde ahora)
-  const deadline = new Date(Date.now() + 10 * 24 * 60 * 60 * 1000);
+  const labelEl = promo.querySelector('.promo-deadline');
 
   const pad = (n) => String(n).padStart(2,'0');
 
+  function getPeriodDates(now){
+    const year = now.getFullYear();
+    const start = new Date(year, 9, 1, 0, 0, 0, 0);       // 1 Oct 00:00
+    const end   = new Date(year, 10, 0, 23, 59, 59, 999); // 31 Oct 23:59:59.999
+    return { start, end };
+  }
+
   function tick(){
     const now = new Date();
-    let diff = deadline - now;
-    if (diff < 0) diff = 0;
+    const { start, end } = getPeriodDates(now);
 
+    if (now < start){
+      if (labelEl) labelEl.textContent = 'Inicia en';
+      update(start - now);
+      return;
+    }
+    if (now <= end){
+      if (labelEl) labelEl.textContent = 'Termina en';
+      update(end - now);
+      return;
+    }
+    if (labelEl) labelEl.textContent = 'Finalizó';
+    update(0);
+  }
+
+  function update(diff){
     const sec = Math.floor(diff / 1000) % 60;
     const min = Math.floor(diff / (1000*60)) % 60;
     const hr  = Math.floor(diff / (1000*60*60)) % 24;
     const day = Math.floor(diff / (1000*60*60*24));
-
-    if (daysEl)  daysEl.textContent  = pad(day);
-    if (hoursEl) hoursEl.textContent = pad(hr);
-    if (minsEl)  minsEl.textContent  = pad(min);
-    if (secsEl)  secsEl.textContent  = pad(sec);
+    daysEl.textContent  = pad(day);
+    hoursEl.textContent = pad(hr);
+    minsEl.textContent  = pad(min);
+    secsEl.textContent  = pad(sec);
   }
 
   tick();
-  const timer = setInterval(() => {
-    tick();
-    if (new Date() >= deadline) clearInterval(timer);
-  }, 1000);
+  setInterval(tick, 1000);
+});
+
+// Footer: año dinámico
+document.addEventListener('DOMContentLoaded', () => {
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+});
+
+// Contacto: envío real con FormSubmit (AJAX) usando tu ID seguro
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contacto-form');
+  const status = document.querySelector('.contact-status');
+  if (!form) return;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('button[type="submit"]');
+    const fd = new FormData(form);
+
+    // Validación mínima
+    const required = ['nombre', 'email', 'asunto', 'mensaje'];
+    for (const key of required){
+      if (!String(fd.get(key) || '').trim()){
+        status && (status.textContent = 'Por favor completa todos los campos.');
+        return;
+      }
+    }
+
+    status && (status.textContent = '');
+    if (btn){ btn.disabled = true; btn.textContent = 'Enviando...'; }
+
+    try{
+      const res = await fetch('https://formsubmit.co/ajax/f6968b2386693a97173231174e4a3939', {
+        method: 'POST',
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok){
+        form.reset();
+        status && (status.textContent = '¡Mensaje enviado! Te contactaremos pronto.');
+      }else{
+        status && (status.textContent = 'No pudimos enviar el mensaje. Intenta de nuevo.');
+      }
+    }catch(err){
+      status && (status.textContent = 'Error de red. Intenta nuevamente.');
+    }finally{
+      if (btn){ btn.disabled = false; btn.textContent = 'Enviar mensaje'; }
+      setTimeout(() => { status && (status.textContent = '') }, 5000);
+    }
+  });
 });

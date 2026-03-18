@@ -33,42 +33,42 @@
 }
 
 .mobileMenuBtnContainer {
-  @apply md:hidden flex items-center relative z-50;
+  @apply md:hidden flex items-center relative z-[1000];
 }
 
 .mobileMenuBtn {
-  @apply text-white hover:text-[#00D4FF] transition-colors focus:outline-none;
+  @apply text-white hover:text-[#00D4FF] transition-colors focus:outline-none p-2 -mr-2;
 }
 
 /* Mobile Menu Transitions */
 .mobileMenuWrapper {
-  @apply md:hidden fixed top-[80px] left-0 w-full overflow-hidden transition-all duration-500 ease-in-out z-40;
+  @apply md:hidden fixed top-0 left-0 w-full h-[100vh] overflow-hidden transition-all duration-500 ease-in-out z-[999];
 }
 
 .mobileMenuOpen {
-  @apply max-h-[400px] border-t border-[#1E40AF]/30 opacity-100;
+  @apply opacity-100 pointer-events-auto;
 }
 
 .mobileMenuClosed {
-  @apply max-h-0 opacity-0 pointer-events-none;
+  @apply opacity-0 pointer-events-none;
 }
 
 .mobileMenuContainer {
-  @apply bg-[#050110] px-6 py-8 flex flex-col gap-6 shadow-2xl border-b border-[#1E40AF]/30;
+  @apply bg-[#050110] w-full h-full px-6 py-24 flex flex-col gap-8 shadow-2xl;
 }
 
 .mobileNavLink {
-  @apply text-white text-lg font-bold tracking-tight flex items-center gap-4 transition-all duration-300 hover:text-[#00D4FF] hover:translate-x-2;
+  @apply text-white text-3xl font-bold tracking-tight flex items-center gap-6 transition-all duration-300 hover:text-[#00D4FF] hover:translate-x-2;
 }
 
 .navLinkIndicator {
-  @apply w-1.5 h-1.5 rounded-full bg-[#1E40AF] transition-all duration-300;
+  @apply w-2 h-2 rounded-full bg-[#1E40AF] transition-all duration-300;
 }
 
 .mobileNavLink:hover .navLinkIndicator {
-  @apply bg-[#00D4FF] shadow-[0_0_8px_#00D4FF] scale-125;
+  @apply bg-[#00D4FF] shadow-[0_0_12px_#00D4FF] scale-150;
 }
 
 .mobileOverlay {
-  @apply fixed inset-0 bg-black/60 backdrop-blur-sm z-30 md:hidden;
+  @apply fixed inset-0 bg-black/80 backdrop-blur-md z-[998] md:hidden;
 }

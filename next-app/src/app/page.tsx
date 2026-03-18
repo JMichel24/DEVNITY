@@ -40,22 +40,31 @@ export default function Home() {
                   Soluciones disruptivas desde Querétaro, México para el mundo
               </p>
 
-              <div className={styles.quickNavContainer}>
-                  <a href="#maui" className={styles.quickCard}>
-                      <span className={styles.quickCardTitle}>MAUI</span>
-                      <span className={styles.quickCardDesc}>IA para Veterinarias</span>
-                  </a>
+               <div className={styles.quickNavContainer}>
+                   <a href="#maui" className={styles.quickCard}>
+                       <span className={styles.quickCardTitle}>MAUI</span>
+                       <span className={styles.quickCardDesc}>IA para Veterinarias</span>
+                   </a>
 
-                  <a href="#polyglot" className={styles.quickCard}>
-                      <span className={styles.quickCardTitle}>Polyglot AI</span>
-                      <span className={styles.quickCardDesc}>Aprendizaje de Idiomas con IA</span>
-                  </a>
+                   <a href="#polyglot" className={styles.quickCard}>
+                       <span className={styles.quickCardTitle}>Polyglot AI</span>
+                       <span className={styles.quickCardDesc}>Aprendizaje de Idiomas con IA</span>
+                   </a>
 
-                  <a href="#servicios" className={styles.quickCard}>
-                      <span className={styles.quickCardTitle}>Web Design</span>
-                      <span className={styles.quickCardDesc}>Diseño Web de Alto Impacto</span>
+                   <a href="#servicios" className={styles.quickCard}>
+                       <span className={styles.quickCardTitle}>Web Design</span>
+                       <span className={styles.quickCardDesc}>Diseño Web de Alto Impacto</span>
+                   </a>
+               </div>
+
+               <div className="pt-8">
+                  <a href="#contacto" className={styles.btnWrapper}>
+                      <div className={styles.btnPrimary}>
+                          Cotizar Web Directo
+                      </div>
                   </a>
-              </div>
+               </div>
+
           </div>
         </section>
 

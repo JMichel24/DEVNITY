@@ -24,7 +24,7 @@ export default function ContactForm() {
     onSubmit: async (values, { resetForm }) => {
       setStatus("loading");
       try {
-        const response = await fetch('https://formspree.io/f/xvgznwqw', {
+        const response = await fetch('/api/contact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(values),
@@ -48,7 +48,7 @@ export default function ContactForm() {
       
       {status === "success" && (
         <div className={styles.successMessage}>
-          ¡Gracias! Hemos recibido tu solicitud. Nos pondremos en contacto pronto.
+          ¡Mensaje enviado con éxito, Jorge se pondrá en contacto pronto!
         </div>
       )}
 
@@ -138,7 +138,12 @@ export default function ContactForm() {
           disabled={status === "loading"}
           className={styles.submitBtn}
         >
-          {status === "loading" ? "Enviando..." : "Enviar Mensaje"}
+          {status === "loading" ? (
+            <div className="flex items-center justify-center gap-2">
+              <span className="w-4 h-4 border-2 border-electricturquoise border-t-transparent rounded-full animate-spin"></span>
+              Enviando...
+            </div>
+          ) : "Enviar Mensaje"}
         </button>
       </form>
     </div>

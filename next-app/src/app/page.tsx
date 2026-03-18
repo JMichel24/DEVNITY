@@ -119,7 +119,7 @@ export default function Home() {
                                 <h3 className={styles.solutionTitle}>MAUI</h3>
                                 <h4 className={styles.solutionSub}>Para Clínicas Veterinarias</h4>
                                 <p className={styles.solutionDesc}>
-                                    Optimizamos la rentabilidad de clínicas veterinarias mediante <strong className="text-white">visión artificial para inventarios</strong> y asistentes de voz para agendas inteligentes. Detenemos la pérdida de insumos y recuperamos citas olvidadas.
+                                    La primera IA vertical diseñada para revolucionar la gestión veterinaria. Automatiza inventarios mediante <strong className="text-white">visión artificial</strong> y optimiza la agenda con asistentes de voz inteligentes. Detén la fuga de capital y recupera el control total de tu clínica.
                                 </p>
                             </div>
                             <div className={styles.solutionFooter}>
@@ -147,7 +147,7 @@ export default function Home() {
                                 <h3 className={styles.solutionTitle}>Polyglot AI</h3>
                                 <h4 className={styles.solutionSub}>Language Learning Revolution</h4>
                                 <p className={styles.solutionDesc}>
-                                    Plataforma educativa que utiliza modelos de lenguaje avanzados para ofrecer <strong className="text-white">tutoría personalizada en múltiples idiomas</strong>. Aprendizaje adaptativo que evoluciona con el ritmo del estudiante.
+                                    La revolución del aprendizaje de idiomas. Tutoría impulsada por <strong className="text-white">modelos generativos</strong> que adaptan el currículo en tiempo real al progreso del estudiante. Habla con fluidez y rompe las fronteras del lenguaje con IA adaptativa.
                                 </p>
                             </div>
                             <div className={styles.solutionFooter}>

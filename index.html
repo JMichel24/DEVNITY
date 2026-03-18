@@ -267,20 +267,26 @@
             const data = Object.fromEntries(formData.entries());
 
             try {
-                // LLamamos a la API Route de Next.js (si está configurada en Vercel)
+                // LLamamos a la Vercel Function en /api/contact.js
                 const res = await fetch('/api/contact', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data),
                 });
 
+                const result = await res.json();
+
                 if (res.ok) {
                     formMessage.textContent = '¡Mensaje enviado con éxito! Jorge te contactará pronto.';
                     formMessage.className = 'text-center text-sm pt-4 font-medium text-electricturquoise';
                     contactForm.reset();
-                } else { throw new Error(); }
+                } else { 
+                    console.error('API Error:', result);
+                    throw new Error(result.error || 'Error en el servidor');
+                }
             } catch (err) {
-                formMessage.textContent = 'Error al enviar. Intenta de nuevo o por WhatsApp.';
+                console.error('Fetch Error:', err);
+                formMessage.textContent = 'Error al enviar (' + err.message + '). Intenta de nuevo o por WhatsApp.';
                 formMessage.className = 'text-center text-sm pt-4 font-medium text-red-400';
             } finally {
                 submitBtn.disabled = false;

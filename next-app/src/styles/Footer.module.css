@@ -1,0 +1,64 @@
+@reference '../app/globals.css';
+.footer {
+  @apply bg-[#050B14] pt-20 pb-10 px-6 md:px-12 border-t border-white/5 relative z-10;
+}
+
+.container {
+  @apply max-w-7xl mx-auto;
+}
+
+.grid {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16;
+}
+
+.brandCol {
+  @apply lg:col-span-1;
+}
+
+.logoWrapper {
+  @apply flex items-center gap-3 mb-6;
+}
+
+.logoIcon {
+  @apply w-8 h-8 text-white;
+}
+
+.brandTitle {
+  @apply text-2xl font-extrabold tracking-widest text-white;
+}
+
+.brandDesc {
+  @apply text-[#A0AEC0] text-sm font-light leading-relaxed mb-6;
+}
+
+.colTitle {
+  @apply text-white font-bold mb-6 tracking-wide uppercase text-sm;
+}
+
+.colList {
+  @apply space-y-4 text-sm text-[#A0AEC0] font-light;
+}
+
+.listLink {
+  @apply hover:text-[#00D4FF] transition-colors duration-300;
+}
+
+.contactItem {
+  @apply flex items-center gap-2;
+}
+
+.contactIcon {
+  @apply w-4 h-4 text-[#00D4FF];
+}
+
+.copyrightSection {
+  @apply pt-8 border-t border-white/10 flex flex-col items-center justify-center text-center;
+}
+
+.copyrightText {
+  @apply text-[#A0AEC0] text-xs font-light tracking-wide mb-2;
+}
+
+.badgeCredits {
+  @apply text-[#00D4FF] text-xs font-bold tracking-widest mt-1 opacity-80 backdrop-blur-sm rounded-full px-4 py-1.5 border border-[#00D4FF]/20 bg-white/[0.05];
+}

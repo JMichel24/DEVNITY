@@ -17,10 +17,10 @@ body {
 /* Efecto Glow avanzado para el botón */
 .btn-glow {
     transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 212, 255, 0.3), 0 0 30px rgba(0, 212, 255, 0.1);
+    box-shadow: 0 0 15px rgba(79, 27, 255, 0.3), 0 0 30px rgba(79, 27, 255, 0.1);
 }
 .btn-glow:hover {
-    box-shadow: 0 0 20px rgba(0, 212, 255, 0.6), 0 0 40px rgba(0, 212, 255, 0.4), 0 0 60px rgba(0, 212, 255, 0.2);
+    box-shadow: 0 0 20px rgba(79, 27, 255, 0.6), 0 0 40px rgba(79, 27, 255, 0.4), 0 0 60px rgba(79, 27, 255, 0.2);
     transform: translateY(-2px);
 }
 
@@ -52,8 +52,8 @@ body {
 
 .glass-card:hover {
     background: rgba(255, 255, 255, 0.05); /* Un poco más claro al pasar el ratón */
-    border-color: rgba(0, 212, 255, 0.8); /* Cambia al Turquesa (#00D4FF) */
-    box-shadow: 0 10px 40px -10px rgba(0, 212, 255, 0.2); /* Sutil glow turquesa en la tarjeta */
+    border-color: rgba(79, 27, 255, 0.8); /* Cambia al Turquesa (#00D4FF) */
+    box-shadow: 0 10px 40px -10px rgba(79, 27, 255, 0.2); /* Sutil glow turquesa en la tarjeta */
     transform: translateY(-5px); /* Pequeño salto hacia arriba */
 }
 
@@ -79,7 +79,7 @@ body {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at center, rgba(0,212,255,0.15) 0%, transparent 50%);
+    background: radial-gradient(circle at center, rgba(79, 27, 255,0.15) 0%, transparent 50%);
     opacity: 0;
     transition: opacity 0.3s ease;
 }
@@ -91,7 +91,7 @@ body {
 /* Red Neuronal / Conexiones (SVG Pattern) para sección de stack */
 .bg-neural-network {
     background-color: transparent;
-    background-image: radial-gradient(circle at 50% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 60%),
+    background-image: radial-gradient(circle at 50% 50%, rgba(79, 27, 255, 0.05) 0%, transparent 60%),
                       url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg stroke='%2300D4FF' stroke-width='0.5' stroke-opacity='0.15' fill='none'%3E%3Ccircle cx='20' cy='20' r='1.5' fill='%2300D4FF' fill-opacity='0.2'/%3E%3Ccircle cx='80' cy='30' r='1.5' fill='%2300D4FF' fill-opacity='0.2'/%3E%3Ccircle cx='40' cy='70' r='1.5' fill='%2300D4FF' fill-opacity='0.2'/%3E%3Ccircle cx='90' cy='80' r='1.5' fill='%2300D4FF' fill-opacity='0.2'/%3E%3Ccircle cx='10' cy='90' r='1.5' fill='%2300D4FF' fill-opacity='0.2'/%3E%3Cpath d='M20 20 L80 30 M80 30 L40 70 M40 70 L20 20 M80 30 L90 80 M40 70 L90 80 M20 20 L10 90 M40 70 L10 90' /%3E%3C/g%3E%3C/svg%3E");
     background-size: 100% 100%, 120px 120px;
 }

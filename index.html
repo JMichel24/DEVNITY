@@ -18,7 +18,10 @@
                 extend: {
                     colors: {
                         deepblue: '#0A192F',
-                        turquoise: '#00D4FF',
+                        deepviolet: '#050110', 
+                        electricviolet: '#4F1BFF',
+                        electricblue: '#1E40AF',
+                        electricturquoise: '#00D4FF',
                     },
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
@@ -45,47 +48,34 @@
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="font-sans antialiased min-h-screen flex flex-col relative selection:bg-turquoise selection:text-deepblue">
+<body class="font-sans antialiased min-h-screen flex flex-col relative selection:bg-electricturquoise selection:text-[#00D4FF] group-hover:text-[#4F1BFF]eepblue">
     
     <!-- Elementos Decorativos del Fondo -->
     <div class="fixed inset-0 z-0 pointer-events-none">
         <div class="absolute inset-0 bg-grid"></div>
         <!-- Luces de ambiente (Blob) -->
-        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-turquoise/10 blur-[120px]"></div>
+        <div class="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-electricturquoise/10 blur-[120px]"></div>
         <div class="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full bg-blue-600/10 blur-[150px]"></div>
     </div>
 
     <!-- Navegación Principal -->
-    <header class="fixed top-0 left-0 w-full z-50 glass-header py-4 px-6 md:px-12 flex items-center justify-between transition-all duration-300">
-        <div class="flex items-center gap-4 cursor-pointer group">
-            <!-- Logo DEVNITY / Cubo (Placeholder animado) -->
-            <div class="w-12 h-12 relative flex items-center justify-center animate-float">
-                <div class="absolute inset-0 bg-turquoise/20 blur-md rounded transition-all duration-300 group-hover:bg-turquoise/40 group-hover:blur-lg"></div>
-                <!-- Reemplazar este SVG con el tag <img> de tu logo real -->
-                <svg class="w-9 h-9 text-turquoise relative z-10 transition-transform duration-500 group-hover:rotate-12 group-hover:scale-110" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-                </svg>
-            </div>
-            <span class="text-2xl md:text-3xl font-extrabold tracking-widest text-white">DEVNITY</span>
-        </div>
+    <header class="fixed top-0 left-0 w-full z-50 bg-deepviolet bg-opacity-90 backdrop-blur-sm py-4 px-6 md:px-12 flex items-center justify-between transition-all duration-300 border-b border-white/20">
+        <a href="#" class="flex items-center gap-4 cursor-pointer group">
+            <!-- Logo DEVNITY -->
+            <img src="./LOGO/devnity-logo.png" alt="DEVNITY" class="h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105" onerror="this.src='./logo.png'; this.onerror=null;" />
+        </a>
         
         <!-- Enlaces (Desktop) -->
-        <nav class="hidden md:flex gap-10 text-sm font-semibold tracking-wider text-white/70">
-            <a href="#" class="hover:text-turquoise transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[2px] after:bg-turquoise after:transition-all after:duration-300 hover:after:w-full">SERVICIOS</a>
-            <a href="#" class="hover:text-turquoise transition-colors duration-300 relative after:content-[''] after:absolute after:-bottom-2 after:left-0 after:w-0 after:h-[2px] after:bg-turquoise after:transition-all after:duration-300 hover:after:w-full">SOLUCIONES IA</a>
-            <a href="#" class="hover:text-turquoise transition-colors duration-300 relative after:content-[''] after:absolute relative after:-bottom-2 after:left-0 after:w-0 after:h-[2px] after:bg-turquoise after:transition-all after:duration-300 hover:after:w-full">PORTAFOLIO</a>
-            <a href="#" class="hover:text-turquoise transition-colors duration-300 relative after:content-[''] after:absolute relative after:-bottom-2 after:left-0 after:w-0 after:h-[2px] after:bg-turquoise after:transition-all after:duration-300 hover:after:w-full">NOSOTROS</a>
+        <nav class="hidden md:flex gap-10 text-sm font-semibold tracking-wider text-[#FFFFFF]">
+            <a href="#" class="hover:text-[#00D4FF] transition-colors duration-300">Inicio</a>
+            <a href="#servicios" class="hover:text-[#00D4FF] transition-colors duration-300">Servicios</a>
+            <a href="#maui" class="hover:text-[#00D4FF] transition-colors duration-300">MAUI</a>
+            <a href="#polyglot" class="hover:text-[#00D4FF] transition-colors duration-300">Polyglot AI</a>
+            <a href="#cotizar" class="hover:text-[#00D4FF] transition-colors duration-300">Cotizar Web</a>
         </nav>
-
-        <!-- Botón Contacto -->
-        <div class="hidden md:block">
-            <a href="#contacto" class="text-xs font-bold px-7 py-3 rounded-full border-2 border-turquoise/40 text-turquoise hover:bg-turquoise hover:text-deepblue hover:border-turquoise hover:shadow-[0_0_15px_rgba(0,212,255,0.4)] transition-all duration-300">
-                HABLEMOS
-            </a>
-        </div>
         
         <!-- Botón Menú Mobile -->
-        <button class="md:hidden text-white hover:text-turquoise transition-colors focus:outline-none">
+        <button class="md:hidden text-white hover:text-[#00D4FF] transition-colors focus:outline-none">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
             </svg>
@@ -97,10 +87,10 @@
         <div class="max-w-6xl mx-auto flex flex-col items-center justify-center space-y-10 relative">
             
             <!-- Badge Superior -->
-            <div class="px-5 py-2 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md inline-flex items-center gap-3 transform transition-transform hover:scale-105 hover:bg-white/[0.05] cursor-default shadow-lg shadow-black/20">
+            <div class="px-5 py-2 rounded-full bg-white/[0.03] border border-white/20 backdrop-blur-md inline-flex items-center gap-3 transform transition-transform hover:scale-105 hover:bg-white/[0.05] cursor-default shadow-lg shadow-black/20">
                 <span class="relative flex h-3 w-3">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-turquoise opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-3 w-3 bg-turquoise"></span>
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-electricturquoise opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-electricturquoise"></span>
                 </span>
                 <span class="text-xs md:text-sm font-semibold tracking-widest text-[#00D4FF] uppercase">El futuro del desarrollo</span>
             </div>
@@ -112,33 +102,33 @@
             </h1>
 
             <!-- Subtítulo -->
-            <p class="text-lg md:text-xl lg:text-2xl text-white/60 max-w-3xl font-light leading-relaxed pt-2">
+            <p class="text-lg md:text-xl lg:text-2xl text-[#A0AEC0] max-w-3xl font-light leading-relaxed pt-2">
                 Soluciones disruptivas desde Querétaro, México para el mundo
             </p>
 
             <!-- Tarjetas de Acceso Rápido -->
             <div class="flex flex-col md:flex-row items-stretch justify-center gap-4 pt-10 pb-12 w-full max-w-4xl mx-auto z-10 relative">
                 <!-- Tarjeta 1: MAUI -->
-                <a href="#maui" class="group flex-1 flex flex-col items-center justify-center p-6 rounded-xl border border-turquoise bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-deepblue hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] hover:-translate-y-1">
-                    <span class="text-white group-hover:text-turquoise font-bold text-lg mb-1 transition-colors">MAUI</span>
-                    <span class="text-white/70 text-sm font-light text-center">IA para Veterinarias</span>
+                <a href="#maui" class="group flex-1 flex flex-col items-center justify-center p-6 rounded-xl border border-electricturquoise bg-white/[0.05] backdrop-blur-sm transition-all duration-300 hover:bg-gradient-to-br hover:from-electricviolet hover:to-electricblue hover:shadow-[0_0_20px_rgba(79,27,255,0.4)] hover:-translate-y-1">
+                    <span class="text-white group-hover:text-electricturquoise font-bold text-lg mb-1 transition-colors">MAUI</span>
+                    <span class="text-[#A0AEC0] text-sm font-light text-center">IA para Veterinarias</span>
                 </a>
 
                 <!-- Tarjeta 2: Polyglot AI -->
-                <a href="#polyglot" class="group flex-1 flex flex-col items-center justify-center p-6 rounded-xl border border-turquoise bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-deepblue hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] hover:-translate-y-1">
-                    <span class="text-white group-hover:text-turquoise font-bold text-lg mb-1 transition-colors">Polyglot AI</span>
-                    <span class="text-white/70 text-sm font-light text-center">Aprendizaje de Idiomas con IA</span>
+                <a href="#polyglot" class="group flex-1 flex flex-col items-center justify-center p-6 rounded-xl border border-electricturquoise bg-white/[0.05] backdrop-blur-sm transition-all duration-300 hover:bg-gradient-to-br hover:from-electricviolet hover:to-electricblue hover:shadow-[0_0_20px_rgba(79,27,255,0.4)] hover:-translate-y-1">
+                    <span class="text-white group-hover:text-electricturquoise font-bold text-lg mb-1 transition-colors">Polyglot AI</span>
+                    <span class="text-[#A0AEC0] text-sm font-light text-center">Aprendizaje de Idiomas con IA</span>
                 </a>
 
                 <!-- Tarjeta 3: Web Design -->
-                <a href="#web" class="group flex-1 flex flex-col items-center justify-center p-6 rounded-xl border border-turquoise bg-white/5 backdrop-blur-sm transition-all duration-300 hover:bg-deepblue hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] hover:-translate-y-1">
-                    <span class="text-white group-hover:text-turquoise font-bold text-lg mb-1 transition-colors">Web Design</span>
-                    <span class="text-white/70 text-sm font-light text-center">Diseño Web de Alto Impacto</span>
+                <a href="#web" class="group flex-1 flex flex-col items-center justify-center p-6 rounded-xl border border-electricturquoise bg-white/[0.05] backdrop-blur-sm transition-all duration-300 hover:bg-gradient-to-br hover:from-electricviolet hover:to-electricblue hover:shadow-[0_0_20px_rgba(79,27,255,0.4)] hover:-translate-y-1">
+                    <span class="text-white group-hover:text-electricturquoise font-bold text-lg mb-1 transition-colors">Web Design</span>
+                    <span class="text-[#A0AEC0] text-sm font-light text-center">Diseño Web de Alto Impacto</span>
                 </a>
             </div>
 
             <!-- Scroll Indicator -->
-            <div class="absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 text-white/30 animate-bounce cursor-pointer hover:text-turquoise transition-colors duration-300">
+            <div class="absolute bottom-[-4rem] left-1/2 transform -translate-x-1/2 flex flex-col items-center gap-3 text-white/30 animate-bounce cursor-pointer hover:text-electricturquoise transition-colors duration-300">
                 <span class="text-[10px] tracking-[0.3em] font-semibold uppercase">Explorar</span>
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -149,7 +139,7 @@
     </main>
 
     <!-- Sección de Nuestras Soluciones de IA -->
-    <section id="proyectos" class="relative z-10 w-full py-24 px-6 md:px-12 bg-[#0A192F]">
+    <section id="proyectos" class="relative z-10 w-full py-24 px-6 md:px-12 bg-deepviolet">
         <!-- Decoración de fondo de la sección -->
         <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         
@@ -157,46 +147,46 @@
             <!-- Encabezado de la Sección -->
             <div class="text-center mb-16">
                 <!-- Título -->
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white font-sans tracking-tight">
+                <h2 class="text-[#00D4FF] group-hover:text-[#4F1BFF]xl md:text-5xl font-extrabold text-white font-sans tracking-tight">
                     Nuestras Soluciones de IA
                 </h2>
                 <!-- Subtítulo -->
-                <p class="mt-4 text-lg md:text-xl text-white/60 font-light max-w-3xl mx-auto">
+                <p class="mt-4 text-lg md:text-xl text-[#A0AEC0] font-light max-w-3xl mx-auto">
                     Transformando industrias a través de algoritmos inteligentes
                 </p>
-                <div class="w-24 h-1 bg-gradient-to-r from-turquoise to-blue-500 mx-auto mt-8 rounded-full"></div>
+                <div class="w-24 h-1 bg-gradient-to-r from-electricviolet to-electricblue mx-auto mt-8 rounded-full"></div>
             </div>
 
             <!-- Grid de Soluciones (2 Tarjetas) -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
                 
                 <!-- Tarjeta 1: MAUI -->
-                <div class="group relative bg-[#1A202C]/80 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)] hover:border-turquoise/30">
+                <div class="group relative bg-deepviolet/80 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(79,27,255,0.15)] hover:border-electricturquoise/30">
                     <!-- Efecto Glow de fondo en hover -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-turquoise/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-electricviolet/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
                     
                     <div class="relative z-10 flex flex-col h-full">
                         <!-- Cabecera de Tarjeta -->
                         <div class="flex items-start justify-between mb-6">
                             <!-- Icono Huella Tech -->
-                            <div class="w-16 h-16 rounded-2xl bg-[#0A192F] border border-white/10 flex items-center justify-center shrink-0 group-hover:border-turquoise/50 transition-colors shadow-inner">
-                                <svg class="w-8 h-8 text-turquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div class="w-16 h-16 rounded-2xl bg-deepviolet border border-white/20 flex items-center justify-center shrink-0 group-hover:border-electricturquoise/50 transition-colors shadow-inner">
+                                <svg class="w-8 h-8 text-electricturquoise" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <!-- Huella estilizada con nodos -->
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21.5c-4 0-7-3-7-6.5a7 7 0 0113.8 0c0 3.5-3 6.5-6.8 6.5zm-5-11.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5zm10 0a2.5 2.5 0 110-5 2.5 2.5 0 010 5zM9.5 5.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5zm5 0a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/>
                                     <!-- Líneas de circuito -->
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 11v4m-3.5-2h7" class="opacity-60"/>
                                 </svg>
                             </div>
-                            <span class="text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full bg-turquoise/10 text-turquoise border border-turquoise/20">
+                            <span class="text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full bg-electricturquoise/10 text-electricturquoise border border-electricturquoise/20">
                                 Vertical AI
                             </span>
                         </div>
 
                         <!-- Contenido -->
                         <div class="flex-grow">
-                            <h3 class="text-3xl font-extrabold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-turquoise transition-all">MAUI</h3>
-                            <h4 class="text-sm font-semibold text-white/50 uppercase tracking-widest mb-5 pb-5 border-b border-white/10">Para Clínicas Veterinarias</h4>
-                            <p class="text-white/70 font-light leading-relaxed mb-8">
+                            <h3 class="text-3xl font-extrabold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-electricturquoise transition-all">MAUI</h3>
+                            <h4 class="text-sm font-semibold text-white/50 uppercase tracking-widest mb-5 pb-5 border-b border-white/20">Para Clínicas Veterinarias</h4>
+                            <p class="text-[#A0AEC0] font-light leading-relaxed mb-8">
                                 Optimizamos la rentabilidad de clínicas veterinarias mediante <strong>visión artificial para inventarios</strong> y asistentes de voz para agendas inteligentes. Detenemos la pérdida de insumos y recuperamos citas olvidadas.
                             </p>
                         </div>
@@ -204,7 +194,7 @@
                         <!-- Botón -->
                         <div class="mt-auto">
                             <a href="#" class="inline-flex flex-col items-start group/btn">
-                                <div class="px-6 py-3 rounded-full border border-turquoise text-white text-sm font-bold tracking-wide transition-all duration-300 group-hover/btn:bg-turquoise group-hover/btn:text-deepblue hover:shadow-[0_0_15px_rgba(0,212,255,0.4)]">
+                                <div class="px-6 py-3 rounded-full border border-electricturquoise text-white text-sm font-bold tracking-wide transition-all duration-300 group-hover/btn:bg-electricturquoise group-hover/btn:text-[#00D4FF] group-hover:text-[#4F1BFF]eepblue hover:shadow-[0_0_15px_rgba(79,27,255,0.4)]">
                                     Ver Caso de Éxito
                                 </div>
                             </a>
@@ -213,31 +203,31 @@
                 </div>
 
                 <!-- Tarjeta 2: Polyglot AI -->
-                <div class="group relative bg-[#1A202C]/80 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/5 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(0,212,255,0.15)] hover:border-turquoise/30">
+                <div class="group relative bg-deepviolet/80 backdrop-blur-xl rounded-3xl p-8 lg:p-10 border border-white/20 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_40px_rgba(79,27,255,0.15)] hover:border-electricturquoise/30">
                     <!-- Efecto Glow de fondo en hover -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-turquoise/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
+                    <div class="absolute inset-0 bg-gradient-to-br from-electricviolet/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl pointer-events-none"></div>
                     
                     <div class="relative z-10 flex flex-col h-full">
                         <!-- Cabecera de Tarjeta -->
                         <div class="flex items-start justify-between mb-6">
                             <!-- Icono Globo/Lenguaje -->
-                            <div class="w-16 h-16 rounded-2xl bg-[#0A192F] border border-white/10 flex items-center justify-center shrink-0 group-hover:border-turquoise/50 transition-colors shadow-inner">
-                                <svg class="w-8 h-8 text-white group-hover:text-turquoise transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <div class="w-16 h-16 rounded-2xl bg-deepviolet border border-white/20 flex items-center justify-center shrink-0 group-hover:border-electricturquoise/50 transition-colors shadow-inner">
+                                <svg class="w-8 h-8 text-white group-hover:text-electricturquoise transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <!-- Burbuja de chat / Globo -->
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
                                     <text x="50%" y="55%" font-size="6" font-weight="bold" fill="currentColor" text-anchor="middle" dominant-baseline="middle" class="font-sans">A文</text>
                                 </svg>
                             </div>
-                            <span class="text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full bg-white/10 text-white border border-white/20">
+                            <span class="text-[10px] uppercase font-bold tracking-widest px-3 py-1.5 rounded-full bg-white/[0.05] text-white border border-electricturquoise">
                                 EdTech
                             </span>
                         </div>
 
                         <!-- Contenido -->
                         <div class="flex-grow">
-                            <h3 class="text-3xl font-extrabold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-turquoise transition-all">Polyglot AI</h3>
-                            <h4 class="text-sm font-semibold text-white/50 uppercase tracking-widest mb-5 pb-5 border-b border-white/10">Language Learning Revolution</h4>
-                            <p class="text-white/70 font-light leading-relaxed mb-8">
+                            <h3 class="text-3xl font-extrabold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-electricturquoise transition-all">Polyglot AI</h3>
+                            <h4 class="text-sm font-semibold text-white/50 uppercase tracking-widest mb-5 pb-5 border-b border-white/20">Language Learning Revolution</h4>
+                            <p class="text-[#A0AEC0] font-light leading-relaxed mb-8">
                                 Plataforma educativa que utiliza modelos de lenguaje avanzados para ofrecer <strong>tutoría personalizada en múltiples idiomas</strong>. Aprendizaje adaptativo que evoluciona con el ritmo del estudiante.
                             </p>
                         </div>
@@ -245,7 +235,7 @@
                         <!-- Botón -->
                         <div class="mt-auto">
                             <a href="#" class="inline-flex flex-col items-start group/btn">
-                                <div class="px-6 py-3 rounded-full border border-turquoise text-white text-sm font-bold tracking-wide transition-all duration-300 group-hover/btn:bg-turquoise group-hover/btn:text-deepblue hover:shadow-[0_0_15px_rgba(0,212,255,0.4)]">
+                                <div class="px-6 py-3 rounded-full border border-electricturquoise text-white text-sm font-bold tracking-wide transition-all duration-300 group-hover/btn:bg-electricturquoise group-hover/btn:text-[#00D4FF] group-hover:text-[#4F1BFF]eepblue hover:shadow-[0_0_15px_rgba(79,27,255,0.4)]">
                                     Explorar Plataforma
                                 </div>
                             </a>
@@ -258,19 +248,19 @@
     </section>
 
     <!-- Sección de Stack Tecnológico -->
-    <section id="stack" class="relative z-10 w-full py-24 px-6 md:px-12 bg-[#0B1A30] border-t border-white/5 overflow-hidden">
+    <section id="stack" class="relative z-10 w-full py-24 px-6 md:px-12 bg-deepviolet border-t border-white/20 overflow-hidden">
         <!-- Fondo de red neuronal -->
         <div class="absolute inset-0 bg-neural-network mix-blend-screen opacity-70 pointer-events-none"></div>
         
         <div class="max-w-7xl mx-auto relative z-10">
             <!-- Encabezado de la Sección -->
             <div class="text-center mb-20 md:mb-24">
-                <span class="text-turquoise text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Ecosistema Moderno</span>
-                <h2 class="text-4xl md:text-5xl font-extrabold text-white">
-                    Nuestro <span class="text-turquoise">Stack</span> Tecnológico
+                <span class="text-electricturquoise text-sm font-bold tracking-[0.2em] uppercase mb-4 block">Ecosistema Moderno</span>
+                <h2 class="text-[#00D4FF] group-hover:text-[#4F1BFF]xl md:text-5xl font-extrabold text-white">
+                    Nuestro <span class="text-electricturquoise">Stack</span> Tecnológico
                 </h2>
-                <div class="w-24 h-1 bg-gradient-to-r from-turquoise to-blue-500 mx-auto mt-6 rounded-full"></div>
-                <p class="mt-6 text-white/60 max-w-2xl mx-auto font-light">
+                <div class="w-24 h-1 bg-gradient-to-r from-electricviolet to-electricblue mx-auto mt-6 rounded-full"></div>
+                <p class="mt-6 text-[#A0AEC0] max-w-2xl mx-auto font-light">
                     Soluciones integrales de alto grado de especialización que aseguran escalabilidad, innovación y eficiencia para tu producto.
                 </p>
             </div>
@@ -279,22 +269,22 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 
                 <!-- Desarrollo Web -->
-                <div class="group relative p-8 rounded-2xl bg-[#0A192F]/80 backdrop-blur-sm border border-white/[0.05] hover:border-turquoise/30 hover:bg-white/[0.03] hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-black/20">
-                    <div class="w-14 h-14 mb-6 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:text-turquoise group-hover:bg-turquoise/10 transition-colors duration-300">
+                <div class="group relative p-8 rounded-2xl bg-deepviolet/80 backdrop-blur-sm border border-white/[0.05] hover:border-electricturquoise/30 hover:bg-white/[0.03] hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-black/20">
+                    <div class="w-14 h-14 mb-6 rounded-xl bg-white/[0.05] flex items-center justify-center text-white group-hover:text-electricturquoise group-hover:bg-electricturquoise/10 transition-colors duration-300">
                         <!-- Icono Monitor/Código -->
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Desarrollo Web</h3>
-                    <p class="text-sm text-white/60 leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
+                    <p class="text-sm text-[#A0AEC0] leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
                         Arquitecturas escalables y responsivas utilizando los últimos frameworks para una experiencia web fluida y altamente optimizada.
                     </p>
                 </div>
 
                 <!-- Implementación de LLMs -->
-                <div class="group relative p-8 rounded-2xl bg-[#0A192F]/80 backdrop-blur-sm border border-white/[0.05] hover:border-turquoise/30 hover:bg-white/[0.03] hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-black/20">
-                    <div class="w-14 h-14 mb-6 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:text-turquoise group-hover:bg-turquoise/10 transition-colors duration-300">
+                <div class="group relative p-8 rounded-2xl bg-deepviolet/80 backdrop-blur-sm border border-white/[0.05] hover:border-electricturquoise/30 hover:bg-white/[0.03] hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-black/20">
+                    <div class="w-14 h-14 mb-6 rounded-xl bg-white/[0.05] flex items-center justify-center text-white group-hover:text-electricturquoise group-hover:bg-electricturquoise/10 transition-colors duration-300">
                         <!-- Icono Cerebro/Sparkles (LLMs) -->
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/>
@@ -302,14 +292,14 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Integración LLMs</h3>
-                    <p class="text-sm text-white/60 leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
+                    <p class="text-sm text-[#A0AEC0] leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
                         Configuración de Modelos de Lenguaje Grande y agentes de IA personalizados que optimizan los flujos de interacción e información.
                     </p>
                 </div>
 
                 <!-- Visión Artificial -->
-                <div class="group relative p-8 rounded-2xl bg-[#0A192F]/80 backdrop-blur-sm border border-white/[0.05] hover:border-turquoise/30 hover:bg-white/[0.03] hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-black/20">
-                    <div class="w-14 h-14 mb-6 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:text-turquoise group-hover:bg-turquoise/10 transition-colors duration-300">
+                <div class="group relative p-8 rounded-2xl bg-deepviolet/80 backdrop-blur-sm border border-white/[0.05] hover:border-electricturquoise/30 hover:bg-white/[0.03] hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-black/20">
+                    <div class="w-14 h-14 mb-6 rounded-xl bg-white/[0.05] flex items-center justify-center text-white group-hover:text-electricturquoise group-hover:bg-electricturquoise/10 transition-colors duration-300">
                         <!-- Icono Ojo / Visión -->
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -317,14 +307,14 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Visión Artificial</h3>
-                    <p class="text-sm text-white/60 leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
+                    <p class="text-sm text-[#A0AEC0] leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
                         Desarrollo de modelos avanzados de Machine Learning para detección, clasificación y análisis de imágenes y video en tiempo real.
                     </p>
                 </div>
 
                 <!-- Automatización -->
-                <div class="group relative p-8 rounded-2xl bg-[#0A192F]/80 backdrop-blur-sm border border-white/[0.05] hover:border-turquoise/30 hover:bg-white/[0.03] hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-black/20">
-                    <div class="w-14 h-14 mb-6 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:text-turquoise group-hover:bg-turquoise/10 transition-colors duration-300">
+                <div class="group relative p-8 rounded-2xl bg-deepviolet/80 backdrop-blur-sm border border-white/[0.05] hover:border-electricturquoise/30 hover:bg-white/[0.03] hover:-translate-y-2 transition-all duration-300 shadow-xl shadow-black/20">
+                    <div class="w-14 h-14 mb-6 rounded-xl bg-white/[0.05] flex items-center justify-center text-white group-hover:text-electricturquoise group-hover:bg-electricturquoise/10 transition-colors duration-300">
                         <!-- Icono Engranaje/Automatización -->
                         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
@@ -332,7 +322,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Automatización</h3>
-                    <p class="text-sm text-white/60 leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
+                    <p class="text-sm text-[#A0AEC0] leading-relaxed font-light group-hover:text-white/80 transition-colors duration-300">
                         Optimización de tareas repetitivas conectando procesos mediante IA e integración de APIs, mejorando tiempos y reduciendo fallos.
                     </p>
                 </div>
@@ -342,7 +332,7 @@
     </section>
 
     <!-- Footer y Contacto -->
-    <footer class="bg-[#050B14] pt-20 pb-10 px-6 md:px-12 border-t border-white/5 relative z-10">
+    <footer class="bg-deepviolet pt-20 pb-10 px-6 md:px-12 border-t border-white/20 relative z-10">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 mb-16">
                 
@@ -363,27 +353,27 @@
                 <!-- Columna 2: Productos -->
                 <div>
                     <h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Productos</h4>
-                    <ul class="space-y-4 text-sm text-white/60 font-light">
-                        <li><a href="#maui" class="hover:text-turquoise transition-colors duration-300">MAUI (IA para Clínicas)</a></li>
-                        <li><a href="#polyglot" class="hover:text-turquoise transition-colors duration-300">Polyglot AI</a></li>
+                    <ul class="space-y-4 text-sm text-[#A0AEC0] font-light">
+                        <li><a href="#maui" class="hover:text-electricturquoise transition-colors duration-300">MAUI (IA para Clínicas)</a></li>
+                        <li><a href="#polyglot" class="hover:text-electricturquoise transition-colors duration-300">Polyglot AI</a></li>
                     </ul>
                 </div>
 
                 <!-- Columna 3: Servicios -->
                 <div>
                     <h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Servicios</h4>
-                    <ul class="space-y-4 text-sm text-white/60 font-light">
-                        <li><a href="#web" class="hover:text-turquoise transition-colors duration-300">Diseño y Desarrollo Web</a></li>
-                        <li><a href="#ia" class="hover:text-turquoise transition-colors duration-300">Consultoría en IA</a></li>
+                    <ul class="space-y-4 text-sm text-[#A0AEC0] font-light">
+                        <li><a href="#web" class="hover:text-electricturquoise transition-colors duration-300">Diseño y Desarrollo Web</a></li>
+                        <li><a href="#ia" class="hover:text-electricturquoise transition-colors duration-300">Consultoría en IA</a></li>
                     </ul>
                 </div>
 
                 <!-- Columna 4: Contacto -->
                 <div>
                     <h4 class="text-white font-bold mb-6 tracking-wide uppercase text-sm">Contacto</h4>
-                    <ul class="space-y-4 text-sm text-white/60 font-light mb-6">
+                    <ul class="space-y-4 text-sm text-[#A0AEC0] font-light mb-6">
                         <li class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-turquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <svg class="w-4 h-4 text-electricturquoise" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             Querétaro, México (HQ)
                         </li>
                         <li>info@devnity.com</li>
@@ -415,11 +405,11 @@
             </div>
 
             <!-- Copyright y Legales -->
-            <div class="pt-8 border-t border-white/10 flex flex-col items-center justify-center text-center">
+            <div class="pt-8 border-t border-white/20 flex flex-col items-center justify-center text-center">
                 <p class="text-white/40 text-xs font-light tracking-wide mb-2">
                     &copy; 2026 DEVNITY. Todos los derechos reservados.
                 </p>
-                <p class="text-turquoise text-xs font-bold tracking-widest mt-1 opacity-80 backdrop-blur-sm rounded-full px-4 py-1.5 border border-turquoise/20 bg-turquoise/5">
+                <p class="text-electricturquoise text-xs font-bold tracking-widest mt-1 opacity-80 backdrop-blur-sm rounded-full px-4 py-1.5 border border-electricturquoise/20 bg-electricturquoise/5">
                     Creado por Jorge Michel | Ingeniería en Tecnologías Computacionales
                 </p>
             </div>

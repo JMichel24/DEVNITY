@@ -1,0 +1,60 @@
+@reference '../app/globals.css';
+.header {
+  @apply fixed top-0 left-0 w-full z-50 transition-all duration-300 border-b border-white/5;
+}
+
+.headerScrolled {
+  @apply shadow-lg bg-[#050110]/95 backdrop-blur-md;
+}
+
+.headerInit {
+  @apply bg-[#050110]/80 backdrop-blur-sm;
+}
+
+.headerContainer {
+  @apply max-w-7xl mx-auto px-6 md:px-12 py-4 flex items-center justify-between;
+}
+
+.logoLink {
+  @apply flex-shrink-0 cursor-pointer flex items-center gap-3;
+}
+
+.logoImage {
+  @apply object-contain transition-transform duration-300 ;
+}
+
+.desktopNav {
+  @apply hidden md:flex items-center gap-10;
+}
+
+.navLink {
+  @apply text-[#FFFFFF] text-sm font-semibold tracking-wider hover:text-[#00D4FF] focus:text-[#00D4FF] transition-colors duration-300;
+}
+
+.mobileMenuBtnContainer {
+  @apply md:hidden flex items-center;
+}
+
+.mobileMenuBtn {
+  @apply text-white hover:text-[#00D4FF] transition-colors focus:outline-none;
+}
+
+.mobileMenuWrapper {
+  @apply md:hidden overflow-hidden transition-all duration-300;
+}
+
+.mobileMenuOpen {
+  @apply max-h-64 border-t border-white/10;
+}
+
+.mobileMenuClosed {
+  @apply max-h-0;
+}
+
+.mobileMenuContainer {
+  @apply bg-[#050110]/95 backdrop-blur-md px-6 py-4 flex flex-col gap-4 shadow-xl;
+}
+
+.mobileNavLink {
+  @apply text-white text-base font-semibold hover:text-[#00D4FF] transition-colors;
+}

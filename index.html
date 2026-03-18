@@ -267,10 +267,13 @@
             const data = Object.fromEntries(formData.entries());
 
             try {
-                // LLamamos a la Vercel Function en /api/contact.js
+                // Envío de datos como JSON a la API de Vercel
                 const res = await fetch('/api/contact', {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
+                    headers: { 
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
                     body: JSON.stringify(data),
                 });
 
@@ -278,16 +281,15 @@
 
                 if (res.ok) {
                     formMessage.textContent = '¡Mensaje enviado con éxito! Jorge te contactará pronto.';
-                    formMessage.className = 'text-center text-sm pt-4 font-medium text-electricturquoise';
+                    formMessage.className = 'text-center text-sm pt-4 font-medium text-electricturquoise animate-pulse';
                     contactForm.reset();
                 } else { 
-                    console.error('API Error:', result);
-                    throw new Error(result.error || 'Error en el servidor');
+                    throw new Error(result.error?.message || result.error || 'Error en el servidor');
                 }
             } catch (err) {
-                console.error('Fetch Error:', err);
-                formMessage.textContent = 'Error al enviar (' + err.message + '). Intenta de nuevo o por WhatsApp.';
-                formMessage.className = 'text-center text-sm pt-4 font-medium text-red-400';
+                console.error('Error al enviar:', err);
+                formMessage.textContent = 'Error: ' + err.message + '. Intenta por WhatsApp.';
+                formMessage.className = 'text-center text-sm pt-4 font-medium text-red-500';
             } finally {
                 submitBtn.disabled = false;
                 btnText.textContent = 'Enviar Mensaje';

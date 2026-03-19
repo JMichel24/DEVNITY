@@ -16,12 +16,12 @@ export default async function handler(req, res) {
   try {
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'devnity.4@gmail.com',
-      subject: `NUEVO PROYECTO DEVNITY: ${name}`,
+      to: 'jmg24.work@gmail.com', // Correo verificado por el usuario
+      subject: 'NUEVO CLIENTE DEVNITY',
       html: `
         <div style="font-family: sans-serif; padding: 20px; color: #050110; background-color: #f4f4f4;">
           <div style="background-color: #050110; padding: 20px; border-radius: 10px; border: 1px solid #00D4FF; color: white;">
-            <h1 style="color: #00D4FF; margin-top: 0;">NUEVO PROYECTO DEVNITY</h1>
+            <h1 style="color: #00D4FF; margin-top: 0;">NUEVO CLIENTE DEVNITY</h1>
             <p><strong>Cliente:</strong> ${name}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Proyecto:</strong> ${projectType}</p>

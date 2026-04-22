@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
 
+import WhatsAppButton from "@/components/WhatsAppButton";
+
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
@@ -23,6 +25,7 @@ export default function RootLayout({
         className={`${montserrat.variable} font-sans antialiased min-h-screen flex flex-col relative selection:bg-electricturquoise selection:text-deepviolet`}
       >
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

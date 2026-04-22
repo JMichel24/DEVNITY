@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body
-        className={`${montserrat.variable} font-sans antialiased min-h-screen flex flex-col relative selection:bg-electricturquoise selection:text-deepviolet`}
+        className={`${montserrat.variable} font-sans antialiased min-h-screen flex flex-col selection:bg-electricturquoise selection:text-deepviolet`}
       >
         {children}
         <WhatsAppButton />

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -24,6 +25,9 @@ export default function RootLayout({
       <body
         className={`${montserrat.variable} font-sans antialiased min-h-screen flex flex-col selection:bg-electricturquoise selection:text-deepviolet`}
       >
+        <Script id="deployment-version">
+          {`console.log("Versión de despliegue: " + new Date().getTime());`}
+        </Script>
         {children}
         <WhatsAppButton />
       </body>

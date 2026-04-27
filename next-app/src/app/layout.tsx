@@ -26,20 +26,31 @@ export default function RootLayout({
         <Script id="deployment-version">
           {`console.log("Versión de despliegue: " + new Date().getTime());`}
         </Script>
-        <Script id="whatsapp-injection" strategy="afterInteractive">
-          {`
-            (function() {
-              const wa = document.createElement('a');
-              wa.href = 'https://wa.me/525631799645';
-              wa.target = '_blank';
-              wa.rel = 'noopener noreferrer';
-              wa.style.cssText = 'position: fixed !important; bottom: 30px !important; right: 30px !important; width: 70px !important; height: 70px !important; background-color: #25D366 !important; border-radius: 50% !important; z-index: 999999999 !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important; text-decoration: none !important; color: white !important; cursor: pointer !important;';
-              wa.innerHTML = '<span style="font-weight: bold !important; font-family: sans-serif !important; font-size: 22px !important;">WA</span>';
-              document.body.appendChild(wa);
-              console.log("🚀 Hardware-Level WhatsApp Injection Complete");
-            })();
-          `}
-        </Script>
+        <style dangerouslySetInnerHTML={{ __html: `
+          #wa-button-fixed {
+            position: fixed !important;
+            bottom: 25px !important;
+            right: 25px !important;
+            width: 65px !important;
+            height: 65px !important;
+            background-color: #25D366 !important;
+            border-radius: 50% !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            z-index: 2147483647 !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.6) !important;
+            cursor: pointer !important;
+            text-decoration: none !important;
+            color: white !important;
+            font-family: Arial, sans-serif !important;
+            font-weight: bold !important;
+            font-size: 20px !important;
+          }
+        `}} />
+        <a id="wa-button-fixed" href="https://wa.me/525631799645" target="_blank" rel="noopener">
+          WA
+        </a>
         {children}
       </body>
     </html>

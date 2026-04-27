@@ -49,7 +49,7 @@ export default function RootLayout({
           }
         `}} />
         <a id="wa-button-fixed" href="https://wa.me/525631799645" target="_blank" rel="noopener">
-          WA
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" style={{ width: '35px', height: '35px', display: 'block' }} alt="WhatsApp" />
         </a>
         {children}
       </body>

@@ -33,10 +33,10 @@ export default function RootLayout({
               wa.href = 'https://wa.me/525631799645';
               wa.target = '_blank';
               wa.rel = 'noopener noreferrer';
-              wa.style.cssText = 'position: fixed !important; bottom: 25px !important; right: 25px !important; width: 65px !important; height: 65px !important; background-color: #25D366 !important; border-radius: 50% !important; z-index: 2147483647 !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; text-decoration: none !important; color: white !important;';
-              wa.innerHTML = '<span style="font-weight: bold !important; font-family: sans-serif !important; font-size: 20px !important;">WA</span>';
+              wa.style.cssText = 'position: fixed !important; bottom: 30px !important; right: 30px !important; width: 70px !important; height: 70px !important; background-color: #25D366 !important; border-radius: 50% !important; z-index: 999999999 !important; display: flex !important; align-items: center !important; justify-content: center !important; box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important; text-decoration: none !important; color: white !important; cursor: pointer !important;';
+              wa.innerHTML = '<span style="font-weight: bold !important; font-family: sans-serif !important; font-size: 22px !important;">WA</span>';
               document.body.appendChild(wa);
-              console.log("🚀 WhatsApp Button Inyectado Directamente en el DOM");
+              console.log("🚀 Hardware-Level WhatsApp Injection Complete");
             })();
           `}
         </Script>

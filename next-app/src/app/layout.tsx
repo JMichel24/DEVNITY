@@ -9,8 +9,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "DEVNITY | Inteligencia Artificial y Calidad Web",
-  description: "Calidad web, accesible para todos. Soluciones disruptivas desde Querétaro, México para el mundo",
+  title: "DEVNITY - Arquitectura de Software e IA",
+  description: "Soluciones disruptivas desde Querétaro, México para el mundo",
 };
 
 export default function RootLayout({

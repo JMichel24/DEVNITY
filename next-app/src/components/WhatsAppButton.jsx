@@ -4,64 +4,54 @@ import React, { useEffect, useState } from 'react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 /**
- * WhatsAppButton - Componente de contacto directo con Prioridad Absoluta.
- * 
- * Modificaciones de Rescate:
- * - Estilos Inline para sobrepasar restricciones de CSS.
- * - Fallback de texto "WA" por si falla la librería de iconos.
- * - Log de depuración para verificar montaje en Vercel.
+ * WhatsAppButton - Rescue Mode (Brute Force CSS)
  */
 const WhatsAppButton = () => {
   const [mounted, setMounted] = useState(false);
-  
+
   useEffect(() => {
     setMounted(true);
-    console.log("🚀 Botón de WhatsApp montado correctamente");
+    console.log("🚀 Botón de WhatsApp montado correctamente (CSS Brute Force)");
   }, []);
 
-  const phoneNumber = "525631799645";
-  const message = "Hola DEVNITY, necesito una cotización.";
-  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-  // Estilos Inline para asegurar visibilidad absoluta
   const buttonStyle = {
     position: 'fixed',
-    bottom: '40px',
-    right: '40px',
-    zIndex: 999999,
-    width: '64px',
-    height: '64px',
+    bottom: '30px',
+    right: '30px',
+    width: '60px',
+    height: '60px',
     backgroundColor: '#25D366',
-    color: 'white',
     borderRadius: '50%',
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    textDecoration: 'none',
-    boxShadow: '0 10px 25px rgba(0,0,0,0.3)',
-    transition: 'all 0.3s ease',
+    color: 'white',
+    fontSize: '30px',
+    boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
     cursor: 'pointer',
-    border: 'none',
-    fontSize: '24px',
-    fontWeight: 'bold'
+    zIndex: 999999,
+    textDecoration: 'none'
   };
 
   if (!mounted) return null;
 
   return (
-    <a
-      href={whatsappUrl}
-      target="_blank"
-      rel="noopener noreferrer"
+    <a 
+      href='https://wa.me/525631799645' 
+      target='_blank' 
+      rel='noopener noreferrer'
       style={buttonStyle}
-      className="hover:scale-110 active:scale-95"
-      aria-label="WhatsApp"
-      id="whatsapp-rescue-button"
+      id="whatsapp-brute-force"
     >
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>
-        <FaWhatsapp size={35} style={{ position: 'absolute' }} />
-        {/* Fallback visible solo si el icono falla o como respaldo */}
-        <span style={{ fontSize: '12px', opacity: 0.8, marginTop: '20px' }}>WA</span>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative' }}>
+        <FaWhatsapp size={35} />
+        <span style={{ 
+          fontSize: '10px', 
+          position: 'absolute', 
+          bottom: '-12px', 
+          fontWeight: 'bold',
+          textShadow: '1px 1px 2px rgba(0,0,0,0.5)'
+        }}>WA</span>
       </div>
     </a>
   );

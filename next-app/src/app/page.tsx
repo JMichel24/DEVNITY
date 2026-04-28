@@ -115,6 +115,12 @@ export default function Home() {
                 <div className={styles.solutionsGrid}>
                     {/* MAUI */}
                     <div id="maui" className={styles.solutionCard}>
+                        <img 
+                            src="/img/MAUI/MAUI.webp" 
+                            alt="MAUI Project" 
+                            loading="lazy" 
+                            className="w-full object-cover aspect-[16/9] rounded-t-3xl" 
+                        />
                         <div className={styles.solutionContent}>
                             <div className={styles.solutionHeader}>
                                 <div className={styles.solutionIconBox}>
@@ -143,6 +149,12 @@ export default function Home() {
 
                     {/* Polyglot AI */}
                     <div id="polyglot" className={styles.solutionCard}>
+                        <img 
+                            src="/img/Polyglot/Polyglot.webp" 
+                            alt="Polyglot AI Project" 
+                            loading="lazy" 
+                            className="w-full object-cover aspect-[16/9] rounded-t-3xl" 
+                        />
                         <div className={styles.solutionContent}>
                             <div className={styles.solutionHeader}>
                                 <div className={styles.solutionIconBox}>

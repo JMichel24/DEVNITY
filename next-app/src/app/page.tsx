@@ -4,6 +4,8 @@ import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import ContactForm from '@/components/ContactForm';
 import { Bot, Code2, LineChart, Globe, Zap, Languages, Stethoscope } from 'lucide-react';
 import styles from '../styles/Page.module.css';
+import imgMaui from '../img/MAUI/MAUI.webp';
+import imgPolyglot from '../img/Polyglot/Polyglot.webp';
 
 export default function Home() {
   return (
@@ -116,7 +118,7 @@ export default function Home() {
                     {/* MAUI */}
                     <div id="maui" className={styles.solutionCard}>
                         <img 
-                            src="/img/MAUI/MAUI.webp" 
+                            src={imgMaui.src} 
                             alt="MAUI Project" 
                             loading="lazy" 
                             className="w-full object-cover aspect-[16/9] rounded-t-3xl" 
@@ -150,7 +152,7 @@ export default function Home() {
                     {/* Polyglot AI */}
                     <div id="polyglot" className={styles.solutionCard}>
                         <img 
-                            src="/img/Polyglot/Polyglot.webp" 
+                            src={imgPolyglot.src} 
                             alt="Polyglot AI Project" 
                             loading="lazy" 
                             className="w-full object-cover aspect-[16/9] rounded-t-3xl" 
